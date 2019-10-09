@@ -1,0 +1,372 @@
+@import url(variables.scss);
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../assets/fonts/avenir-next-pro-lt/avenir-next-lt-pro-regular.otf);
+}
+
+@font-face {
+  font-family: "avenir next demi bold";
+  src: url(../assets/fonts/avenir-next-pro-lt/avenir-next-lt-pro-demi.otf);
+}
+
+@font-face {
+  font-family: "avenir next bold";
+  src: url(../assets/fonts/avenir-next-pro-lt/avenir-next-lt-pro-bold.otf);
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Avenir Next";
+  color: #323232;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.font-label {
+  font-size: 12px;
+  line-height: 20px;
+  color: #AFAFAF;
+  text-decoration: none;
+}
+
+.font-paragraph {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.font-subheader {
+  font-family: "avenir next demi bold";
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.font-header {
+  font-family: "avenir next bold";
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.header__nav-bar {
+  background-color: #323232;
+  width: 100%;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.header__logo-link {
+  height: 19px;
+}
+
+.header__nav-list {
+  width: 100%;
+  list-style: none;
+  padding: 16px 0 0 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__nav-list-item {
+  width: 50%;
+  text-align: center;
+}
+
+.header__current-site {
+  padding: 0 0 6px 0;
+  border-bottom: solid 4px white;
+}
+
+.header__nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  position: relative;
+  background-color: rgba(50, 50, 50, 0.5);
+}
+
+.hero__img {
+  z-index: -1;
+  width: 100%;
+  height: 183px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.hero__txt {
+  color: white;
+  position: absolute;
+  top: 60px;
+  left: 16px;
+  margin: 0;
+}
+
+.main__article {
+  padding: 0 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+}
+
+.main__article-title {
+  padding: 32px 0 0 0;
+  margin: 0;
+}
+
+.main__article-img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 288px;
+  padding: 24px 0 0 0;
+}
+
+.main__quote {
+  padding: 24px 0 0 0;
+  margin: 0;
+}
+
+.main__quotee {
+  padding: 32px 0 0 0;
+  margin: 0;
+}
+
+.main__musician-name {
+  padding: 40px 0 0 0;
+  margin: 0;
+}
+
+.main__musician-info {
+  padding: 24px 0 40px 0;
+  margin: 0;
+}
+
+.main__gallery {
+  padding: 0 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #FAFAFA;
+}
+
+.main__gallery-title {
+  padding: 32px 0 24px 0;
+  margin: 0;
+}
+
+.gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.gallery__img {
+  width: 288px;
+  padding: 0 0 16px 0;
+}
+
+.footer {
+  background-color: #323232;
+  width: 100%;
+  color: white;
+  padding: 0 11px;
+}
+
+.footer__nav-greeting {
+  margin: 0;
+  padding: 48px 0 0 0;
+  font-size: 36px;
+}
+
+.footer__nav-list {
+  list-style: none;
+  width: 130px;
+  padding: 28px 0 0 5px;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer__nav-logo-img {
+  display: none;
+}
+
+.footer__contact-name {
+  padding: 32px 0 0 0;
+}
+
+.footer__contact-address {
+  padding: 11px 0 0 0;
+}
+
+.footer__contact-email {
+  padding: 11px 0 0 0;
+}
+
+.footer__copyright-info {
+  margin: 0;
+  padding: 32px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .font-label {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .font-list-contact {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .font-paragraph {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .font-subheader {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .font-header2 {
+    font-family: "avenir next bold";
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .font-header {
+    font-size: 36px;
+    line-height: 44px;
+  }
+  .font-hero-header {
+    font-family: "avenir next bold";
+    font-size: 60px;
+    line-height: 68px;
+  }
+  .header__nav-bar {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 0 24px;
+  }
+  .header__nav-list-item {
+    width: 100px;
+  }
+  .hero__img {
+    height: 400px;
+  }
+  .hero__txt {
+    top: 130px;
+  }
+  .main__article {
+    padding: 0 24px;
+  }
+  .main__article-img {
+    width: 720px;
+    height: 362px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .main__musician-info {
+    -webkit-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 24px;
+            column-gap: 24px;
+  }
+  .main__gallery {
+    padding: 0 24px;
+  }
+  .gallery {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .gallery__img {
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    width: 224px;
+    height: 126px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    padding: 24px 0 0 0;
+  }
+  .footer {
+    padding: 0 24px;
+    margin: 48px 0 0 0;
+  }
+  .footer__nav-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
+  .footer__nav-greeting {
+    padding: 50px 0 0 0;
+  }
+  .footer__nav-list {
+    padding: 0 0 0 50px;
+    width: auto;
+  }
+  .footer__nav-list-item {
+    padding: 0 30px 0 0;
+  }
+  .footer__nav-logo-img {
+    display: inline-block;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
