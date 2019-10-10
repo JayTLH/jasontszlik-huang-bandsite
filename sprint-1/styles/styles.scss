@@ -1,8 +1,14 @@
 @import './variables/variables.scss';
 @import './mixins/mixins.scss';
 
+@mixin mobile-above {
+    @media screen and (min-width: 321px) {
+        @content;
+    }
+}
+
 @mixin tablet-view {
-    @media screen and (min-width: 768px) and (max-width: 1440px) {
+    @media screen and (min-width: 321px) and (max-width: 768px) {
         @content;
     }
 }
@@ -48,25 +54,57 @@ body {
     line-height: 20px;
     color: #AFAFAF;
     text-decoration: none;
+
+}
+
+.font-list-contact{
+    font-size: 14px;
+    line-height: 20px;
 }
 
 .font-paragraph {
     font-size: 13px;
     line-height: 18px;
+
+    @include tablet-view() {
+        font-size: 14px;
+        line-height: 22px;
+    }
 }
 
 .font-subheader {
     font-family: "avenir next demi bold";
     font-size: 14px;
     line-height: 22px;
+
+    @include tablet-view() {
+        font-size: 16px;
+        line-height: 24px;
+    }
 }
+
+@include tablet-view() {
+    .font-header2 {
+        font-family: "avenir next bold";
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
 .font-header {
     font-family: "avenir next bold";
     font-size: 24px;
     line-height: 32px;
+
+    @include tablet-view() {
+        font-size: 36px;
+        line-height: 44px;
+    }
 }
 
 .header {
+    width: 100vw;
+
     &__nav-bar {
         background-color: #323232;
         width: 100%;
@@ -75,6 +113,11 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: flex-end;
+
+        @include tablet-view() {
+            flex-direction: row;
+            padding: 0 3.125%;
+        }
     }
 
     &__logo-link {
@@ -92,6 +135,10 @@ body {
     &__nav-list-item {
         width: 50%;
         text-align: center;
+
+        @include tablet-view() {
+            width: 100px;
+        }
     }
 
     &__current-site {
@@ -116,6 +163,10 @@ body {
         width: 100%;
         height: 183px;
         object-fit: cover;
+
+        @include tablet-view() {
+            height: 400px;
+        }
     }
 
     &__txt {
@@ -124,6 +175,10 @@ body {
         top: 60px;
         left: 16px;
         margin: 0;
+
+        @include tablet-view() {
+            top: 130px;
+        }
     }
 }
 
@@ -132,6 +187,10 @@ body {
         padding: 0 16px;
         display: flex;
         flex-flow: column wrap;
+
+        @include tablet-view() {
+            padding: 0 24px;
+        }
     }
 
     &__article-title {
@@ -143,6 +202,12 @@ body {
         align-self: center;
         width: 288px;
         padding: 24px 0 0 0;
+
+        @include tablet-view() {
+            width: 93.75vw;
+            height: 47.135vw;
+            object-fit: cover;
+        }
     }
 
     &__quote {
@@ -163,6 +228,11 @@ body {
     &__musician-info {
         padding: 24px 0 40px 0;
         margin: 0;
+
+        @include tablet-view() {
+            column-count: 2;
+            column-gap: 24px;
+        }
     }
 
     &__gallery {
@@ -170,6 +240,10 @@ body {
         display: flex;
         flex-direction: column;
         background-color: #FAFAFA;
+
+        @include tablet-view() {
+            padding: 0 24px;
+        }
     }
 
     &__gallery-title {
@@ -183,9 +257,23 @@ body {
     flex-direction: column;
     align-items: center;
 
+    @include tablet-view() {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
     &__img {
         width: 288px;
         padding: 0 0 16px 0;
+
+        @include tablet-view() {
+            box-sizing: content-box;
+            width: 224px;
+            height: 126px;
+            object-fit: cover;
+            padding: 24px 0 0 0;
+        }
     }
 }
 
@@ -195,10 +283,24 @@ body {
     color: white;
     padding: 0 11px;
 
+    @include tablet-view() {
+        padding: 0 24px;
+        margin: 48px 0 0 0;
+
+        .nav-bar {
+            display: flex;
+            align-items: baseline;
+        }
+    }
+
     &__nav-greeting {
         margin: 0;
         padding: 48px 0 0 0;
         font-size: 36px;
+
+        @include tablet-view() {
+            padding: 50px 0 0 0;
+        }
     }
 
     &__nav-list {
@@ -208,10 +310,25 @@ body {
         margin: 0;
         display: flex;
         justify-content: space-between;
+
+        @include tablet-view() {
+            padding: 0 0 0 50px;
+            width: auto;
+        }
+    }
+
+    @include tablet-view() {
+        .nav-list-item {
+            padding: 0 30px 0 0;
+        }
     }
 
     &__nav-logo-img {
         display: none;
+
+        @include tablet-view() {
+            display: inline-block;
+        }
     }
 
     &__contact-name {
@@ -230,253 +347,4 @@ body {
         margin: 0;
         padding: 32px 0;
     }
-}
-
-@media screen and (min-width: 768px) {
-    .font-label {
-        font-size: 12px;
-        line-height: 20px;
-        // color: #AFAFAF;
-        // text-decoration: none;
-    }
-
-    .font-list-contact{
-        font-size: 14px;
-        line-height: 20px;
-    }
-    
-    .font-paragraph {
-        font-size: 14px;
-        line-height: 22px;
-    }
-
-    .font-subheader {
-        // font-family: "avenir next demi bold";
-        font-size: 16px;
-        line-height: 24px;
-    }    
-
-    .font-header2 {
-        font-family: "avenir next bold";
-        font-size: 24px;
-        line-height: 32px;
-    }
-
-    .font-header {
-        // font-family: "avenir next bold";
-        font-size: 36px;
-        line-height: 44px;
-    }
-
-    .font-hero-header {
-        font-family: "avenir next bold";
-        font-size: 60px;
-        line-height: 68px;
-    }
-    
-    .header {
-        &__nav-bar {
-            // background-color: #323232;
-            // width: 100%;
-            // height: 80px;
-            // display: flex;
-            // align-items: center;
-            // justify-content: flex-end;
-            flex-direction: row;
-            padding: 0 24px;
-        }
-        
-        &__logo-link {
-            // height: 19px;
-        }
-    
-        &__nav-list {
-            // width: 100%;
-            // list-style: none;
-            // padding: 16px 0 0 0;
-            // margin: 0;
-            // display: flex;
-        }
-    
-        &__nav-list-item {
-            // width: 50%;
-            width: 100px;
-            // text-align: center;
-        }
-    
-        &__current-site {
-            // padding: 0 0 6px 0;
-            // border-bottom: solid 4px white;
-        }
-    
-        &__nav-link {
-            // color: white;
-            // text-decoration: none;
-        }
-    }
-    
-    .hero {
-        // display: flex;
-        // flex-flow: row wrap;
-        // position: relative;
-        // background-color: rgba(50,50,50,0.5);
-    
-        &__img {
-            // z-index: -1;
-            // width: 100%;
-            // height: 183px;
-            // object-fit: cover;
-            height: 400px;
-        }
-    
-        &__txt {
-            // color: white;
-            // position: absolute;
-            top: 130px;
-            // left: 16px;
-            // margin: 0;
-        }
-    }
-    
-    .main {
-        &__article {
-            // padding: 0 16px;
-            // display: flex;
-            // flex-flow: column wrap;
-            padding: 0 24px;
-        }
-    
-        &__article-title {
-            // padding: 32px 0 0 0;
-            // margin: 0;
-        }
-    
-        &__article-img {
-            // align-self: center;
-            // width: 288px;
-            // padding: 24px 0 0 0;
-            width: 720px;
-            height: 362px;
-            object-fit: cover;
-        }
-    
-        &__quote {
-            // padding: 24px 0 0 0;
-            // margin: 0;
-        }
-    
-        &__quotee {
-            // padding: 32px 0 0 0;
-            // margin: 0;
-        }
-    
-        &__musician-name {
-            // padding: 40px 0 0 0;
-            // margin: 0;
-        }
-    
-        &__musician-info {
-            // padding: 24px 0 40px 0;
-            // margin: 0;
-            column-count: 2;
-            column-gap: 24px;
-        }
-
-        &__gallery {
-            // padding:0 16px;
-            // display: flex;
-            // flex-direction: column;
-            // background-color: #FAFAFA;
-            padding: 0 24px;
-        }
-    
-        &__gallery-title {
-            // padding: 32px 0 24px 0;
-            // margin: 0;
-        }
-    }
-    
-    .gallery {
-        // padding:0 16px;
-        // display: flex;
-        // flex-direction: column;
-        // background-color: #FAFAFA;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-    
-        &__title {
-            // padding: 32px 0 24px 0;
-            // margin: 0;
-        }
-    
-        &__img {
-            // width: 288px;
-            // align-self: center;
-            // padding: 0 0 16px 0;
-            box-sizing: content-box;
-            width: 224px;
-            height: 126px;
-            object-fit: cover;
-            padding: 24px 0 0 0;
-        }
-    }
-    
-    .footer {
-        // background-color: #323232;
-        // width: 100%;
-        // color: white;
-        // padding: 0 11px;
-        padding: 0 24px;
-        margin: 48px 0 0 0;
-        
-        &__nav-bar {
-            display: flex;
-            align-items: baseline;
-        }
-
-        &__nav-greeting {
-            // margin: 0;
-            // padding: 48px 0 0 0;
-            // font-size: 36px;
-            padding: 50px 0 0 0;
-        }
-    
-        &__nav-list {
-            // list-style: none;
-            // width: 130px;
-            // padding: 28px 0 0 5px;
-            // margin: 0;
-            // display: flex;
-            // justify-content: space-between;
-            padding: 0 0 0 50px;
-            width: auto;
-        }
-    
-        &__nav-list-item {
-            padding: 0 30px 0 0;
-        }
-
-        &__nav-logo-img {
-            display: inline-block;
-            // justify-self: end;
-        }
-    
-        &__contact-name {
-            // padding: 32px 0 0 0;
-        }
-    
-        &__contact-address {
-            // padding: 11px 0 0 0;
-        }
-    
-        &__contact-email {
-            // padding: 11px 0 0 0;
-        }
-    
-        &__copyright-info {
-            // margin: 0;
-            // padding: 32px 0;
-        }
-    }        
 }
