@@ -15,17 +15,17 @@
 
 @font-face {
     font-family: "Avenir Next";
-    src: url(../assets/fonts/avenir-next-pro-lt/avenir-next-lt-pro-regular.otf);
+    src: url(../assets/fonts/avenir-next-pro-lt/avenir-next-lt-pro-regular.otf) format("opentype");
 }
 
 @font-face {
     font-family: "avenir next demi bold";
-    src: url(../assets/fonts/avenir-next-pro-lt/avenir-next-lt-pro-demi.otf);
+    src: url(../assets/fonts/avenir-next-pro-lt/avenir-next-lt-pro-demi.otf) format("opentype");
 }
 
 @font-face {
     font-family: "avenir next bold";
-    src: url(../assets/fonts/avenir-next-pro-lt/avenir-next-lt-pro-bold.otf);
+    src: url(../assets/fonts/avenir-next-pro-lt/avenir-next-lt-pro-bold.otf) format("opentype");
 }
 
 html,
@@ -96,6 +96,17 @@ body {
     }
 }
 
+.font-hero-header {
+    font-family: "avenir next bold";
+    font-size: 24px;
+    line-height: 32px;
+
+    @include tablet-view() {
+        font-size: 60px;
+        line-height: 68px;
+    }
+}
+
 .header {
     width: 100%;
 
@@ -127,6 +138,10 @@ body {
         @include tablet-view() {
             padding: 0 45px 0 0;
         }
+
+        @include laptop-view() {
+            padding: 0 56px 0 0;
+        }
     }
 
     &__nav-list {
@@ -150,7 +165,13 @@ body {
             height: 80px;
             display: flex;
             align-items: center;
-            padding: 16px 16px 0 16px;  
+            padding: 16px 16px 0 16px;
+            width: 80px;
+            font-size: 14px;
+
+            @include laptop-view() {
+                margin: 0 56px 0 0;
+            }
         }
     }
 
@@ -187,6 +208,10 @@ body {
 
         @include tablet-view() {
             height: 400px;
+
+            @include laptop-view() {
+                height: 670px;
+            }
         }
     }
 
@@ -198,20 +223,25 @@ body {
         margin: 0;
 
         @include tablet-view() {
-            top: 145px;
+            top: 135px;
             left: 24px;
+
+            @include laptop-view() {
+                top: 225px;
+                left: 180px;
+            }
         }
     }
 }
 
 .main {
     &__article {
-        padding: 0 16px;
+        padding: 0 16px 40px 16px;
         display: flex;
         flex-flow: column wrap;
 
         @include tablet-view() {
-            padding: 0 24px;
+            padding: 0 24px 40px 24px;
         }
     }
 
@@ -247,14 +277,18 @@ body {
         margin: 0;
     }
 
-    &__musician-info {
-        padding: 24px 0 40px 0;
-        margin: 0;
-
-        @include tablet-view() {
-            column-count: 2;
-            column-gap: 24px;
+    @include tablet-view() {
+        &__musician-info {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-gap: 24px;
         }
+    }
+
+    &__musician-text1,
+    &__musician-text2 {
+        padding: 24px 0 0 0;
+        margin: 0;
     }
 
     &__gallery {
@@ -278,12 +312,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 0 48px 0;
 
     @include tablet-view() {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
-        // align-items: center;
+        padding: 0 0 40px 0;
     }
 
     &__img {
@@ -309,7 +344,6 @@ body {
 
     @include tablet-view() {
         padding: 0 24px;
-        margin: 48px 0 0 0;
 
         &__nav-bar {
             display: flex;
