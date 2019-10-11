@@ -331,7 +331,6 @@ body {
             height: 126px;
             object-fit: cover;
             padding: 24px 0 0 0;
-            // margin: auto;
         }
     }
 }
@@ -341,6 +340,7 @@ body {
     width: 100%;
     color: white;
     padding: 0 11px;
+    overflow: auto;
 
     @include tablet-view() {
         padding: 0 24px;
@@ -372,7 +372,8 @@ body {
 
         @include tablet-view() {
             box-sizing: content-box;
-            padding: 0 180px 0 50px;
+            padding: 0 210px 0 50px;
+            flex-shrink: 0;
         }
     }
 

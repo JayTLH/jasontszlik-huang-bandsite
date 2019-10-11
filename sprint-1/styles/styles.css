@@ -425,6 +425,7 @@ body {
   width: 100%;
   color: white;
   padding: 0 11px;
+  overflow: auto;
 }
 
 @media screen and (min-width: 321px) {
@@ -472,7 +473,9 @@ body {
   .footer__nav-list {
     -webkit-box-sizing: content-box;
             box-sizing: content-box;
-    padding: 0 180px 0 50px;
+    padding: 0 210px 0 50px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
   }
 }
 
