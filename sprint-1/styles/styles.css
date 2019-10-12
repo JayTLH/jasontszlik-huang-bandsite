@@ -222,6 +222,14 @@ body {
   text-decoration: none;
 }
 
+@media screen and (min-width: 769px) {
+  .header__nav-link:hover {
+    -webkit-transition: 1s;
+    transition: 1s;
+    color: #FFFFFF;
+  }
+}
+
 .header__current-link {
   color: #FFFFFF;
 }

@@ -161,6 +161,13 @@ body {
     &__nav-link {
         color: #AFAFAF;
         text-decoration: none;
+
+        @include laptop-view {
+            &:hover {
+                transition: 1s;
+                color: #FFFFFF;
+            }
+        }
     }
 
     &__current-link {
