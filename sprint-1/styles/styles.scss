@@ -239,7 +239,7 @@ body {
             padding: 48px 0 0 0;
             align-self: flex-start;
             position: relative;
-            // calculated the correct position to keep the 180px padding from the mockup, (1440 - 896) / 2 - 180
+            // calculated the position to keep the 180px padding from the mockup, (1440 - 896) / 2 - 180
             right: 92px;
         }
     }
@@ -255,7 +255,7 @@ body {
             height: 362px;
 
             @include laptop-view() {
-                // converted the pixels to the viewport ratio, 896 / 1440
+                // converted the pixels to viewport width to avoid overflow at lower resolutions, width 896 / 1440, height 450 / 1440
                 width: 62.22222vw;
                 height: 31.25vw;
                 padding: 48px 0 0 0;
@@ -317,7 +317,7 @@ body {
         margin: 0;
 
         @include laptop-view() {
-            // converted pixels to viewport, 420 / 1440
+            // converted pixels to viewport for proper positioning and responsiveness, 420 / 1440
             width: 29.166666vw;
         }
     }
@@ -399,7 +399,6 @@ body {
             display: flex;
             align-items: baseline;
             flex-wrap: wrap;
-            position: relative;
         }
     }
     

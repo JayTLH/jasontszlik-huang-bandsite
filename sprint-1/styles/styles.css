@@ -553,7 +553,6 @@ body {
             align-items: baseline;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    position: relative;
   }
 }
 
