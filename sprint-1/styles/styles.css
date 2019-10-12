@@ -1,17 +1,16 @@
-@import url(variables.scss);
 @font-face {
-  font-family: "Avenir Next";
-  src: url(../assets/fonts/avenir-next-pro-lt/avenir-next-lt-pro-regular.otf) format("opentype");
+  font-family: "avenir next";
+  src: url(./fonts/avenir-next-pro-lt/avenir-next-lt-pro-regular.otf) format("opentype");
 }
 
 @font-face {
   font-family: "avenir next demi bold";
-  src: url(../assets/fonts/avenir-next-pro-lt/avenir-next-lt-pro-demi.otf) format("opentype");
+  src: url(./fonts/avenir-next-pro-lt/avenir-next-lt-pro-demi.otf) format("opentype");
 }
 
 @font-face {
   font-family: "avenir next bold";
-  src: url(../assets/fonts/avenir-next-pro-lt/avenir-next-lt-pro-bold.otf) format("opentype");
+  src: url(./fonts/avenir-next-pro-lt/avenir-next-lt-pro-bold.otf) format("opentype");
 }
 
 html,
@@ -20,7 +19,7 @@ body {
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "Avenir Next";
+  font-family: "avenir next";
   color: #323232;
 }
 
