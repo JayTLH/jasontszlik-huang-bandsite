@@ -276,8 +276,23 @@ body {
 
 @media screen and (min-width: 321px) and (min-width: 769px) {
   .hero__txt {
-    top: 225px;
+    top: 230px;
     left: 180px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -298,9 +313,30 @@ body {
   }
 }
 
+@media screen and (min-width: 321px) and (min-width: 769px) {
+  .main__article {
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    padding: 0 180px 40px 180px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .main__article-title {
   padding: 32px 0 0 0;
   margin: 0;
+}
+
+@media screen and (min-width: 769px) {
+  .main__article-title {
+    padding: 48px 0 0 0;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    position: relative;
+    right: 92px;
+  }
 }
 
 .main__article-img {
@@ -320,9 +356,33 @@ body {
   }
 }
 
+@media screen and (min-width: 321px) and (min-width: 769px) {
+  .main__article-img {
+    width: 62.22222vw;
+    height: 31.25vw;
+    padding: 48px 0 0 0;
+  }
+}
+
 .main__quote {
   padding: 24px 0 0 0;
   margin: 0;
+}
+
+@media screen and (min-width: 769px) {
+  .main__quote {
+    width: 62.22222vw;
+  }
+}
+
+.main__quote-br {
+  display: none;
+}
+
+@media screen and (min-width: 769px) {
+  .main__quote-br {
+    display: inline;
+  }
 }
 
 .main__quotee {
@@ -330,9 +390,21 @@ body {
   margin: 0;
 }
 
+@media screen and (min-width: 769px) {
+  .main__quotee {
+    width: 62.22222vw;
+  }
+}
+
 .main__musician-name {
   padding: 40px 0 0 0;
   margin: 0;
+}
+
+@media screen and (min-width: 769px) {
+  .main__musician-name {
+    width: 62.22222vw;
+  }
 }
 
 @media screen and (min-width: 321px) {
@@ -345,9 +417,22 @@ body {
   }
 }
 
+@media screen and (min-width: 321px) and (min-width: 769px) {
+  .main__musician-info {
+    grid-gap: 40px;
+    width: 62.22222vw;
+  }
+}
+
 .main__musician-text1, .main__musician-text2 {
   padding: 24px 0 0 0;
   margin: 0;
+}
+
+@media screen and (min-width: 769px) {
+  .main__musician-text1, .main__musician-text2 {
+    width: 29.166666vw;
+  }
 }
 
 .main__gallery {
@@ -368,9 +453,21 @@ body {
   }
 }
 
+@media screen and (min-width: 321px) and (min-width: 769px) {
+  .main__gallery {
+    padding: 0 180px;
+  }
+}
+
 .main__gallery-title {
   padding: 32px 0 24px 0;
   margin: 0;
+}
+
+@media screen and (min-width: 769px) {
+  .main__gallery-title {
+    padding: 48px 0 40px 0;
+  }
 }
 
 .gallery {
@@ -420,6 +517,13 @@ body {
   }
 }
 
+@media screen and (min-width: 321px) and (min-width: 769px) {
+  .gallery__img {
+    width: 344px;
+    height: 193px;
+  }
+}
+
 .footer {
   background-color: #323232;
   width: 100%;
@@ -432,6 +536,15 @@ body {
   .footer {
     padding: 0 24px;
   }
+}
+
+@media screen and (min-width: 321px) and (min-width: 769px) {
+  .footer {
+    padding: 0 180px;
+  }
+}
+
+@media screen and (min-width: 321px) {
   .footer__nav-bar {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -441,6 +554,7 @@ body {
             align-items: baseline;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    position: relative;
   }
 }
 
@@ -448,12 +562,6 @@ body {
   margin: 0;
   padding: 48px 0 0 0;
   font-size: 36px;
-}
-
-@media screen and (min-width: 321px) {
-  .footer__nav-greeting {
-    padding: 50px 0 0 0;
-  }
 }
 
 .footer__nav-list {
@@ -479,6 +587,12 @@ body {
   }
 }
 
+@media screen and (min-width: 321px) and (min-width: 769px) {
+  .footer__nav-list {
+    padding: 0 554px 0 60px;
+  }
+}
+
 .footer__nav-logo-img {
   display: none;
 }
@@ -486,6 +600,13 @@ body {
 @media screen and (min-width: 321px) {
   .footer__nav-logo-img {
     display: inline-block;
+  }
+}
+
+@media screen and (min-width: 321px) and (min-width: 769px) {
+  .footer__nav-logo-img {
+    width: 120px;
+    height: 24px;
   }
 }
 
@@ -508,21 +629,59 @@ body {
   }
 }
 
+@media screen and (min-width: 321px) and (min-width: 769px) {
+  .footer__contacts {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .footer__contact-info {
+    width: 276px;
+  }
+}
+
 .footer__contact-name {
   padding: 32px 0 0 0;
+}
+
+@media screen and (min-width: 769px) {
+  .footer__contact-name {
+    padding: 56px 0 0 0;
+  }
 }
 
 .footer__contact-address {
   padding: 11px 0 0 0;
 }
 
+@media screen and (min-width: 769px) {
+  .footer__contact-address {
+    padding: 24px 0 0 0;
+  }
+}
+
 .footer__contact-email {
   padding: 11px 0 0 0;
+}
+
+@media screen and (min-width: 769px) {
+  .footer__contact-email {
+    padding: 24px 0 0 0;
+  }
 }
 
 .footer__copyright-info {
   margin: 0;
   padding: 32px 0;
+}
+
+@media screen and (min-width: 769px) {
+  .footer__copyright-info {
+    padding: 40px 0;
+  }
 }
 
 @media screen and (min-width: 321px) {
