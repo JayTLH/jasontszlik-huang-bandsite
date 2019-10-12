@@ -374,6 +374,14 @@ body {
             @include laptop-view() {
                 width: 344px;
                 height: 193px;
+                opacity: 0.5;
+                filter: grayscale(100%);
+                transition: 1s;
+
+                &:hover {
+                    opacity: 1;
+                    filter: none;
+                }
             }
         }
     }

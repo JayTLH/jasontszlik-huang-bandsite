@@ -520,6 +520,16 @@ body {
   .gallery__img {
     width: 344px;
     height: 193px;
+    opacity: 0.5;
+    -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+  .gallery__img:hover {
+    opacity: 1;
+    -webkit-filter: none;
+            filter: none;
   }
 }
 
