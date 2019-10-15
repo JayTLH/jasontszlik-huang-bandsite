@@ -1,0 +1,520 @@
+@import './mixins/mixins.scss';
+@import './fonts/fonts.scss';
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "avenir next";
+    color: #323232;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+// making classes for different font styles
+.font-label {
+    font-size: 12px;
+    line-height: 20px;
+    color: #AFAFAF;
+    text-decoration: none;
+
+}
+
+.font-list-contact{
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.font-paragraph {
+    font-size: 13px;
+    line-height: 18px;
+
+    @include tablet-view() {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+.font-subheader {
+    font-family: "avenir next demi bold";
+    font-size: 14px;
+    line-height: 22px;
+
+    @include tablet-view() {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+@include tablet-view() {
+    .font-header2 {
+        font-family: "avenir next bold";
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+.font-header {
+    font-family: "avenir next bold";
+    font-size: 24px;
+    line-height: 32px;
+
+    @include tablet-view() {
+        font-size: 36px;
+        line-height: 44px;
+    }
+}
+
+.font-hero-header {
+    font-family: "avenir next bold";
+    font-size: 24px;
+    line-height: 32px;
+
+    @include tablet-view() {
+        font-size: 60px;
+        line-height: 68px;
+    }
+}
+
+.header {
+    width: 100%;
+
+    &__nav-bar {
+        background-color: #323232;
+        width: 100%;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+
+        @include tablet-view() {
+            flex-direction: row;
+            padding: 0 24px;
+            align-items: baseline;
+            justify-content: flex-start;
+            overflow: auto;
+
+            @include laptop-view() {
+                padding: 0 180px;
+            }
+        }
+    }
+
+    &__logo-link {
+        height: 19px;
+
+        @include tablet-view() {
+            padding: 0 45px 0 0;
+        }
+
+        @include laptop-view() {
+            padding: 0 56px 0 0;
+        }
+    }
+
+    &__nav-list {
+        width: 100%;
+        list-style: none;
+        padding: 16px 0 0 0;
+        margin: 0;
+        display: flex;
+
+        @include tablet-view() {
+            padding: 0;
+        }
+    }
+
+    &__nav-list-item {
+        width: 50%;
+        text-align: center;
+
+        @include tablet-view() {
+            width: auto;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            padding: 16px 16px 0 16px;
+            width: 80px;
+            font-size: 14px;
+
+            @include laptop-view() {
+                margin: 0 56px 0 0;
+            }
+        }
+    }
+
+    &__current-site {
+        padding: 0 0 6px 0;
+        border-bottom: solid 4px white;
+
+        @include tablet-view() {
+            padding: 16px 8px 0 8px;
+        }
+    }
+
+    &__nav-link {
+        color: #AFAFAF;
+        text-decoration: none;
+
+        @include laptop-view {
+            &:hover {
+                transition: 1s;
+                color: #FFFFFF;
+            }
+        }
+    }
+
+    &__current-link {
+        color: #FFFFFF;
+    }
+}
+
+.hero {
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    background-color: rgba(#323232,0.5);
+
+    &__img {
+        z-index: -1;
+        width: 100%;
+        height: 183px;
+        object-fit: cover;
+
+        @include tablet-view() {
+            height: 400px;
+
+            @include laptop-view() {
+                height: 670px;
+            }
+        }
+    }
+
+    &__txt {
+        color: white;
+        position: absolute;
+        top: 60px;
+        left: 16px;
+        margin: 0;
+
+        @include tablet-view() {
+            top: 135px;
+            left: 24px;
+
+            @include laptop-view() {
+                top: 230px;
+                left: 180px;
+            }
+        }
+    }
+}
+
+.main {
+    @include laptop-view() {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__article {
+        padding: 0 16px 40px 16px;
+        display: flex;
+        flex-flow: column wrap;
+
+        @include tablet-view() {
+            padding: 0 24px 40px 24px;
+
+            @include laptop-view() {
+                box-sizing: content-box;
+                padding: 0 180px 40px 180px;
+                align-items: center;
+            }
+        }
+    }
+
+    &__article-title {
+        padding: 32px 0 0 0;
+        margin: 0;
+
+        @include laptop-view() {
+            padding: 48px 0 0 0;
+            align-self: flex-start;
+            position: relative;
+            // calculated the position to keep the 180px padding from the mockup, (1440 - 896) / 2 - 180
+            right: 92px;
+        }
+    }
+
+    &__article-img {
+        align-self: center;
+        width: 100%;
+        height: 145px;
+        padding: 24px 0 0 0;
+        object-fit: cover;
+
+        @include tablet-view() {
+            height: 362px;
+
+            @include laptop-view() {
+                // converted the pixels to viewport width to avoid overflow at lower resolutions, width 896 / 1440, height 450 / 1440
+                width: 62.22222vw;
+                height: 31.25vw;
+                padding: 48px 0 0 0;
+            }
+        }
+    }
+
+    &__quote {
+        padding: 24px 0 0 0;
+        margin: 0;
+
+        @include laptop-view() {
+            width: 62.22222vw;
+        }
+    }
+
+    &__quote-br {
+        display: none;
+
+        @include laptop-view() {
+            display: inline;
+        }
+    }
+
+    &__quotee {
+        padding: 32px 0 0 0;
+        margin: 0;
+
+        @include laptop-view() {
+            width: 62.22222vw;
+        }
+    }
+
+    &__musician-name {
+        padding: 40px 0 0 0;
+        margin: 0;
+
+        @include laptop-view() {
+            width: 62.22222vw;
+        }
+    }
+
+    @include tablet-view() {
+        &__musician-info {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-gap: 24px;
+
+            @include laptop-view() {
+                grid-gap: 40px;
+                width: 62.22222vw;
+            }
+        }
+    }
+
+    &__musician-text1,
+    &__musician-text2 {
+        padding: 24px 0 0 0;
+        margin: 0;
+
+        @include laptop-view() {
+            // converted pixels to viewport for proper positioning and responsiveness, 420 / 1440
+            width: 29.166666vw;
+        }
+    }
+
+    &__gallery {
+        padding:0 16px;
+        display: flex;
+        flex-direction: column;
+        background-color: #FAFAFA;
+
+        @include tablet-view() {
+            padding: 0 24px;
+
+            @include laptop-view() {
+                padding: 0 180px;
+            }
+        }
+    }
+
+    &__gallery-title {
+        padding: 32px 0 24px 0;
+        margin: 0;
+
+        @include laptop-view() {
+            padding: 48px 0 40px 0;
+        }
+    }
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 48px 0;
+
+    @include tablet-view() {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding: 0 0 40px 0;
+    }
+
+    &__img {
+        width: 288px;
+        padding: 0 0 16px 0;
+
+        @include tablet-view() {
+            box-sizing: content-box;
+            width: 224px;
+            height: 126px;
+            object-fit: cover;
+            padding: 24px 0 0 0;
+
+            @include laptop-view() {
+                width: 344px;
+                height: 193px;
+                opacity: 0.5;
+                filter: grayscale(100%);
+                transition: 1s;
+
+                &:hover {
+                    opacity: 1;
+                    filter: none;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    background-color: #323232;
+    width: 100%;
+    color: white;
+    padding: 0 11px;
+    overflow: auto;
+
+    @include tablet-view() {
+        padding: 0 24px;
+
+        @include laptop-view() {
+            padding: 0 180px;
+        }
+    }
+
+    &__nav-bar {
+        @include tablet-view() {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+    }
+    
+    &__nav-greeting {
+        margin: 0;
+        padding: 48px 0 0 0;
+        font-size: 36px;
+    }
+
+    &__nav-list {
+        list-style: none;
+        width: 130px;
+        padding: 28px 0 0 5px;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet-view() {
+            box-sizing: content-box;
+            padding: 0 210px 0 50px;
+            flex-shrink: 0;
+
+            @include laptop-view() {
+                padding: 0 554px 0 60px;
+            }
+        }
+    }
+
+    &__nav-logo-img {
+        display: none;
+
+        @include tablet-view() {
+            display: inline-block;
+
+            @include laptop-view() {
+                width: 120px;
+                height: 24px;
+            }
+        }
+    }
+
+    @include tablet-view() {
+        &__nav-link {
+            padding: 16px 0 0 0;
+        }
+    }
+
+    @include tablet-view() {
+        &__contacts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            @include laptop-view() {
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    @include laptop-view() {
+        &__contact-info {
+            width: 276px;
+        }
+    }
+
+    &__contact-name {
+        padding: 32px 0 0 0;
+
+        @include laptop-view() {
+            padding: 56px 0 0 0;
+        }
+    }
+
+    &__contact-address {
+        padding: 11px 0 0 0;
+
+        @include laptop-view() {
+            padding: 24px 0 0 0;
+        }
+    }
+
+    &__contact-email {
+        padding: 11px 0 0 0;
+
+        @include laptop-view() {
+            padding: 24px 0 0 0;
+        }
+    }
+
+    &__copyright-info {
+        margin: 0;
+        padding: 32px 0;
+
+        @include laptop-view() {
+            padding: 40px 0;
+        }
+    }
+
+    @include tablet-view() {
+        &__copyright-break {
+            display: none;
+        }
+    }
+}
