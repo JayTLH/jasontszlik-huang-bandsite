@@ -217,15 +217,15 @@ body {
 
 .main {
     @include laptop-view() {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
     }
 
     &__article {
         padding: 0 16px 40px 16px;
         display: flex;
-        flex-flow: column wrap;
+        flex-direction: column;
 
         @include tablet-view() {
             padding: 0 24px 40px 24px;
@@ -243,28 +243,24 @@ body {
         margin: 0;
 
         @include laptop-view() {
-            padding: 48px 0 0 0;
             align-self: flex-start;
-            position: relative;
-            // calculated the position to keep the 180px padding from the mockup, (1440 - 896) / 2 - 180
-            right: 92px;
         }
     }
 
     &__article-img {
         align-self: center;
-        width: 100%;
+        width: 288px;
         height: 145px;
         padding: 24px 0 0 0;
         object-fit: cover;
 
         @include tablet-view() {
+            width: 720px;
             height: 362px;
 
             @include laptop-view() {
-                // converted the pixels to viewport width to avoid overflow at lower resolutions, width 896 / 1440, height 450 / 1440
-                width: 62.22222vw;
-                height: 31.25vw;
+                width: 896px;
+                height: 450px;
                 padding: 48px 0 0 0;
             }
         }
@@ -275,7 +271,7 @@ body {
         margin: 0;
 
         @include laptop-view() {
-            width: 62.22222vw;
+            width: 896px;
         }
     }
 
@@ -292,7 +288,7 @@ body {
         margin: 0;
 
         @include laptop-view() {
-            width: 62.22222vw;
+            width: 896px;
         }
     }
 
@@ -301,7 +297,7 @@ body {
         margin: 0;
 
         @include laptop-view() {
-            width: 62.22222vw;
+            width: 896px;
         }
     }
 
@@ -313,20 +309,14 @@ body {
 
             @include laptop-view() {
                 grid-gap: 40px;
-                width: 62.22222vw;
+                width: 896px;
             }
         }
     }
 
-    &__musician-text1,
-    &__musician-text2 {
+    &__musician-text {
         padding: 24px 0 0 0;
         margin: 0;
-
-        @include laptop-view() {
-            // converted pixels to viewport for proper positioning and responsiveness, 420 / 1440
-            width: 29.166666vw;
-        }
     }
 
     &__gallery {
@@ -358,13 +348,28 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 0 48px 0;
+    padding: 0 0 24px 0;
 
     @include tablet-view() {
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-between;
+        justify-content: center;
         padding: 0 0 40px 0;
+    }
+    
+    &__row {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet-view() {
+            width: 720px;
+            flex-direction: row;
+            justify-content: space-between;
+
+            @include laptop-view() {
+                width: 1080px;
+            }
+        }
     }
 
     &__img {
@@ -400,6 +405,8 @@ body {
     color: white;
     padding: 0 11px;
     overflow: auto;
+    display: flex;
+    flex-direction: column;
 
     @include tablet-view() {
         padding: 0 24px;
@@ -413,7 +420,6 @@ body {
         @include tablet-view() {
             display: flex;
             align-items: baseline;
-            flex-wrap: wrap;
         }
     }
     
@@ -458,6 +464,7 @@ body {
     @include tablet-view() {
         &__nav-link {
             padding: 16px 0 0 0;
+            justify-self: flex-end;
         }
     }
 
@@ -465,9 +472,11 @@ body {
         &__contacts {
             display: flex;
             flex-wrap: wrap;
+            width: 720px;
             justify-content: space-between;
 
             @include laptop-view() {
+                width: 1080px;
                 justify-content: flex-start;
             }
         }
