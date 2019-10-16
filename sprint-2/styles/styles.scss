@@ -96,8 +96,6 @@ body {
         @include tablet-view() {
             flex-direction: row;
             padding: 0 24px;
-            // align-items: baseline;
-            // justify-content: flex-start;
 
             @include laptop-view() {
                 padding: 0 180px;
@@ -162,7 +160,7 @@ body {
 
         @include laptop-view {
             &:hover {
-                transition: 1s;
+                transition: 0.5s;
                 color: #FFFFFF;
             }
         }
@@ -356,8 +354,6 @@ body {
     padding: 0 0 24px 0;
 
     @include tablet-view() {
-        display: flex;
-        flex-flow: row wrap;
         justify-content: center;
         padding: 0 0 40px 0;
     }
@@ -409,7 +405,6 @@ body {
     width: 100%;
     color: white;
     padding: 0 11px;
-    overflow: auto;
     display: flex;
     flex-direction: column;
 
@@ -444,12 +439,8 @@ body {
 
         @include tablet-view() {
             box-sizing: content-box;
-            padding: 0 210px 0 50px;
-            flex-shrink: 0;
-
-            @include laptop-view() {
-                padding: 0 554px 0 60px;
-            }
+            padding: 0 0 0 50px;
+            // flex-shrink: 0;
         }
     }
 
@@ -469,7 +460,7 @@ body {
     @include tablet-view() {
         &__nav-link {
             padding: 16px 0 0 0;
-            justify-self: flex-end;
+            margin: 0 0 0 auto;
         }
     }
 

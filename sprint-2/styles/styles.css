@@ -214,8 +214,8 @@ body {
 
 @media screen and (min-width: 1440px) {
   .header__nav-link:hover {
-    -webkit-transition: 1s;
-    transition: 1s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
     color: #FFFFFF;
   }
 }
@@ -472,13 +472,6 @@ body {
 
 @media screen and (min-width: 768px) {
   .gallery {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -554,7 +547,6 @@ body {
   width: 100%;
   color: white;
   padding: 0 11px;
-  overflow: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -610,15 +602,7 @@ body {
   .footer__nav-list {
     -webkit-box-sizing: content-box;
             box-sizing: content-box;
-    padding: 0 210px 0 50px;
-    -ms-flex-negative: 0;
-        flex-shrink: 0;
-  }
-}
-
-@media screen and (min-width: 768px) and (min-width: 1440px) {
-  .footer__nav-list {
-    padding: 0 554px 0 60px;
+    padding: 0 0 0 50px;
   }
 }
 
@@ -642,7 +626,7 @@ body {
 @media screen and (min-width: 768px) {
   .footer__nav-link {
     padding: 16px 0 0 0;
-    justify-self: flex-end;
+    margin: 0 0 0 auto;
   }
 }
 
