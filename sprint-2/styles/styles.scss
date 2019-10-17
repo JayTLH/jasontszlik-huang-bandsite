@@ -82,11 +82,8 @@ body {
 }
 
 .header {
-    width: 100%;
-
     &__nav-bar {
         background-color: #323232;
-        width: 100%;
         height: 80px;
         display: flex;
         flex-direction: column;
@@ -96,10 +93,10 @@ body {
         @include tablet-view() {
             flex-direction: row;
             padding: 0 24px;
+        }
 
-            @include laptop-view() {
-                padding: 0 180px;
-            }
+        @include laptop-view() {
+            padding: 0 180px;
         }
     }
 
@@ -135,14 +132,13 @@ body {
 
         @include tablet-view() {
             width: auto;
-            align-self: center;
             padding: 37px 6px 27px 6px;
             margin: 0 70px 0 0;
             font-size: 14px;
+        }
 
-            @include laptop-view() {
-                margin: 0 56px 0 0;
-            }
+        @include laptop-view() {
+            margin: 0 56px 0 0;
         }
     }
 
@@ -173,7 +169,6 @@ body {
 
 .hero {
     display: flex;
-    flex-flow: row wrap;
     position: relative;
     background-color: rgba(#323232,0.5);
 
@@ -185,15 +180,15 @@ body {
 
         @include tablet-view() {
             height: 400px;
+        }
 
-            @include laptop-view() {
-                height: 670px;
-            }
+        @include laptop-view() {
+            height: 670px;
         }
     }
 
     &__txt {
-        color: white;
+        color: #FFFFFF;
         position: absolute;
         top: 60px;
         left: 16px;
@@ -202,40 +197,33 @@ body {
         @include tablet-view() {
             top: 135px;
             left: 24px;
+        }
 
-            @include laptop-view() {
-                top: 230px;
-                left: 180px;
-            }
+        @include laptop-view() {
+            top: 235px;
+            left: 180px;
         }
     }
 }
 
 .main {
-    @include laptop-view() {
-        // display: flex;
-        // flex-direction: column;
-        // align-items: center;
-    }
-
     &__article {
-        padding: 0 16px 40px 16px;
+        padding: 32px 16px 40px 16px;
         display: flex;
         flex-direction: column;
 
         @include tablet-view() {
-            padding: 0 24px 40px 24px;
+            padding: 32px 24px 40px 24px;
+        }
 
-            @include laptop-view() {
-                box-sizing: content-box;
-                padding: 0 180px 40px 180px;
-                align-items: center;
-            }
+        @include laptop-view() {
+            box-sizing: content-box;
+            padding: 48px 180px 40px 180px;
+            align-items: center;
         }
     }
 
     &__article-title {
-        padding: 32px 0 0 0;
         margin: 0;
 
         @include laptop-view() {
@@ -253,12 +241,12 @@ body {
         @include tablet-view() {
             width: 720px;
             height: 362px;
+        }
 
-            @include laptop-view() {
-                width: 896px;
-                height: 450px;
-                padding: 48px 0 0 0;
-            }
+        @include laptop-view() {
+            width: 896px;
+            height: 450px;
+            padding: 48px 0 0 0;
         }
     }
 
@@ -267,6 +255,7 @@ body {
         margin: 0;
 
         @include laptop-view() {
+            padding: 48px 0 0 0;
             width: 896px;
         }
     }
@@ -284,6 +273,7 @@ body {
         margin: 0;
 
         @include laptop-view() {
+            padding: 40px 0 0 0;
             width: 896px;
         }
     }
@@ -293,57 +283,53 @@ body {
         margin: 0;
 
         @include laptop-view() {
+            padding: 56px 0 0 0;
             width: 896px;
         }
     }
 
-    @include tablet-view() {
-        &__musician-info {
+    &__musician-info {
+        @include tablet-view() {
             display: grid;
             grid-template-columns: auto auto;
             grid-gap: 24px;
+        }
 
-            @include laptop-view() {
-                grid-gap: 40px;
-                width: 896px;
-            }
+        @include laptop-view() {
+            grid-gap: 40px;
+            width: 896px;
         }
     }
 
     &__musician-text {
         padding: 24px 0 0 0;
         margin: 0;
+
+        @include laptop-view() {
+            padding: 32px 0 0 0;
+        }
     }
 
     &__gallery {
-        padding:0 16px;
-        display: flex;
-        flex-direction: column;
+        padding:32px 16px 24px 16px;
         background-color: #FAFAFA;
 
         @include tablet-view() {
-            padding: 0 24px;
+            padding: 32px 24px 16px 32px;
+        }
 
-            @include laptop-view() {
-                padding: 0 180px;
-            }
+        @include laptop-view() {
+            padding: 48px 180px 16px 180px;
         }
     }
 
     &__gallery-title {
-        padding: 32px 0 24px 0;
+        padding: 0 0 24px 0;
         margin: 0;
 
         @include laptop-view() {
-            padding: 48px 0 40px 0;
+            padding: 0 0 64px 0;
         }
-    }
-
-    &__comments {
-        padding: 0 16px;
-        display: flex;
-        flex-direction: column;
-        background-color: #FFFFFF;
     }
 }
 
@@ -351,12 +337,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 0 24px 0;
-
-    @include tablet-view() {
-        justify-content: center;
-        padding: 0 0 40px 0;
-    }
     
     &__row {
         display: flex;
@@ -366,37 +346,50 @@ body {
             width: 720px;
             flex-direction: row;
             justify-content: space-between;
+        }
 
-            @include laptop-view() {
-                width: 1080px;
-            }
+        @include laptop-view() {
+            width: 1080px;
         }
     }
 
     &__img {
+        box-sizing: content-box;
+        object-fit: cover;
         width: 288px;
+        height: 162px;
         padding: 0 0 16px 0;
 
         @include tablet-view() {
-            box-sizing: content-box;
             width: 224px;
             height: 126px;
-            object-fit: cover;
-            padding: 24px 0 0 0;
+            padding: 0 0 24px 0;
+        }
 
-            @include laptop-view() {
-                width: 344px;
-                height: 193px;
-                opacity: 0.5;
-                filter: grayscale(100%);
-                transition: 1s;
+        @include laptop-view() {
+            width: 344px;
+            height: 193px;
+            opacity: 0.5;
+            filter: grayscale(100%);
+            transition: 1s;
 
-                &:hover {
-                    opacity: 1;
-                    filter: none;
-                }
+            &:hover {
+                opacity: 1;
+                filter: none;
             }
         }
+    }
+}
+
+.comments {
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+
+    &__title {
+        margin: 0;
+        padding: 32px 0 0 0;
     }
 }
 
@@ -404,16 +397,16 @@ body {
     background-color: #323232;
     width: 100%;
     color: white;
-    padding: 0 11px;
+    padding: 48px 11px 40px 11px;
     display: flex;
     flex-direction: column;
 
     @include tablet-view() {
-        padding: 0 24px;
+        padding: 48px 24px 48px 24px;
+    }
 
-        @include laptop-view() {
-            padding: 0 180px;
-        }
+    @include laptop-view() {
+        padding: 48px 180px 48px 180px;
     }
 
     &__nav-bar {
@@ -425,8 +418,11 @@ body {
     
     &__nav-greeting {
         margin: 0;
-        padding: 48px 0 0 0;
         font-size: 36px;
+
+        @include tablet-view() {
+            padding: 0 50px 0 0;
+        }
     }
 
     &__nav-list {
@@ -438,9 +434,7 @@ body {
         justify-content: space-between;
 
         @include tablet-view() {
-            box-sizing: content-box;
-            padding: 0 0 0 50px;
-            // flex-shrink: 0;
+            padding: 0;
         }
     }
 
@@ -449,17 +443,17 @@ body {
 
         @include tablet-view() {
             display: inline-block;
+        }
 
-            @include laptop-view() {
-                width: 120px;
-                height: 24px;
-            }
+        @include laptop-view() {
+            width: 120px;
+            height: 24px;
         }
     }
 
-    @include tablet-view() {
-        &__nav-link {
-            padding: 16px 0 0 0;
+    &__nav-link {
+        padding: 0 32px 0 0;
+        @include tablet-view() {
             margin: 0 0 0 auto;
         }
     }
@@ -478,17 +472,16 @@ body {
         }
     }
 
-    @include laptop-view() {
-        &__contact-info {
-            width: 276px;
+    &__contact-info {
+        padding: 18px 0 0 0;
+        
+        @include tablet-view() {
+            padding: 46px 0 0 0;
         }
-    }
-
-    &__contact-name {
-        padding: 32px 0 0 0;
 
         @include laptop-view() {
-            padding: 56px 0 0 0;
+            padding: 50px 0 0 0;
+            width: 276px;
         }
     }
 
@@ -510,15 +503,11 @@ body {
 
     &__copyright-info {
         margin: 0;
-        padding: 32px 0;
-
-        @include laptop-view() {
-            padding: 40px 0;
-        }
+        padding: 40px 0 0 0;
     }
 
-    @include tablet-view() {
-        &__copyright-break {
+    &__copyright-break {
+        @include tablet-view() {
             display: none;
         }
     }
