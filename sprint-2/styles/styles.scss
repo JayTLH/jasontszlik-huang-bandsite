@@ -395,12 +395,16 @@ body {
     &__new-comments {
         padding: 40px 0 32px 0;
         width: 288px;
-        border-bottom: solid 1px #323232;
+        border-bottom: solid 1px #D5D2D1;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         align-self: center;
         position: relative;
+
+        @include tablet-view() {
+            width: 528px;
+        }
     }
 
     &__user-img {
@@ -417,14 +421,18 @@ body {
         width: 224px;
         display: flex;
         flex-direction: column;
+
+        @include tablet-view() {
+            width: 460px;
+        }
     }
 
     &__form-user {
         height: 48px;
         margin: 0 0 16px 0;
+        padding: 0 0 0 12px;
         border: solid 2px #E1E1E1;
         border-radius: 4px;
-        text-indent: 12px;
 
         &::placeholder {
             font-family: "avenir next";
@@ -439,9 +447,9 @@ body {
     &__form-comment {
         height: 96px;
         margin: 0 0 16px 0;
+        padding: 0 0 50px 12px;
         border: solid 2px #E1E1E1;
         border-radius: 4px;
-        text-indent: 12px;
 
         &::placeholder {
             font-family: "avenir next";
@@ -462,6 +470,47 @@ body {
 
         &:hover {
             background-color: #323232;
+        }
+
+        @include tablet-view() {
+            width: 160px;
+            align-self: flex-end;
+        }
+    }
+
+    &__old-comments {
+        padding: 0 0 40px 0;
+        align-self: center;
+    }
+
+    &__list {
+        padding: 24px 0 24px 0;
+        margin: 0;
+        width: 288px;
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        list-style: none;
+        border-bottom: solid 1px #D5D2D1;
+    }
+
+    &__user-img-past {
+        width: 48px;
+        height: 48px;
+        object-fit: cover;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 24px;
+    }
+
+    &__user-info {
+        width: 210px;
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet-view() {
+            justify-content: flex-start;
         }
     }
 }

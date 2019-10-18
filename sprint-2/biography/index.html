@@ -59,14 +59,25 @@
                 <img class="comments__user-img" src="../assets/images/Mohan-muruge.jpg" alt="profile picture of the current user">
                 <form class="comments__form" action="" method="">
                     <label class="comments__form-label font-label" for="user-name">NAME</label>
-                    <input class="comments__form-user" type="text" name="user-name" placeholder="Enter your name">
+                    <input class="comments__form-user" type="text" name="user-name" placeholder="Enter your name" required>
                     <label class="comments__form-label font-label" for="new-comment">COMMENT</label>
-                    <input class="comments__form-comment" type="text" name="new-comment" placeholder="Add a new comment">
+                    <input class="comments__form-comment" type="text" name="new-comment" placeholder="Add a new comment" required>
                     <button class="comments__form-button">Comment</button>
                 </form>
             </section>
             <section class="comments__old-comments">
-                placeholder for past comments
+                <!-- <ul class="comments__list">
+                    <li class="comments__list-item">
+                        <img class="comments__user-img-past" src="../assets/images/no-profile-pic.jpg" alt="profile picture of past commenters">
+                        <header class="comments__user-info">
+                            <p class="comments__user-name-past">my name</p>
+                            <p class="comments__date font-label">today's date</p>
+                        </header>
+                        <article class="comments__comment-past">
+                            <p class="comments__comment-content">comments</p>
+                        </article>
+                    </li>
+                </ul> -->
             </section>
         </section>
     </main>
@@ -87,19 +98,20 @@
                 <section class="footer__contact-email"><a class="footer__contact-mailto font-label" href="mailto:info@thebeesknees.com">info@thebeesknees.com</a></section>
             </article>
             <article class="footer__contact-info">
-                <section class="footer__contact-name">Marsha Vlasic<br>Artist Group International</section>
-                <section class="footer__contact-address font-label">Booking Agent for<br>US / South America / Japan</section>
-                <section class="footer__contact-email"><a class="footer__contact-mailto font-label" href="mailto:marsha.vlasic@artistgrp.com">marsha.vlasic@artistgrp.com</a></section>
+                <p class="footer__contact-name">Marsha Vlasic<br>Artist Group International</p>
+                <p class="footer__contact-address font-label">Booking Agent for<br>US / South America / Japan</p>
+                <p class="footer__contact-email"><a class="footer__contact-mailto font-label" href="mailto:marsha.vlasic@artistgrp.com">marsha.vlasic@artistgrp.com</a></p>
             </article>
             <article class="footer__contact-info">
-                <section class="footer__contact-name">Russel Warby<br>William Morrir Entertainment </section>
-                <section class="footer__contact-address font-label">Booking Agent for<br>UK / EU / AU</section>
-                <section class="footer__contact-email"><a class="footer__contact-mailto font-label" href="mailto:RLW@wmeentertainment.com">RLW@wmeentertainment.com</a></section>
+                <p class="footer__contact-name">Russel Warby<br>William Morrir Entertainment </p>
+                <p class="footer__contact-address font-label">Booking Agent for<br>UK / EU / AU</p>
+                <p class="footer__contact-email"><a class="footer__contact-mailto font-label" href="mailto:RLW@wmeentertainment.com">RLW@wmeentertainment.com</a></p>
             </article>
         </section>
         <section class="footer__copyright">
             <p class="footer__copyright-info font-label">Copyright The Bees Knees © 2018<br class="footer__copyright-break"> All Rights Reserved</p>            
         </section>
     </footer>
+    <script src="../scripts/script.js"></script>
 </body>
 </html>

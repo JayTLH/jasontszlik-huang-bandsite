@@ -530,7 +530,7 @@ body {
 .comments__new-comments {
   padding: 40px 0 32px 0;
   width: 288px;
-  border-bottom: solid 1px #323232;
+  border-bottom: solid 1px #D5D2D1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -544,6 +544,12 @@ body {
   -ms-flex-item-align: center;
       align-self: center;
   position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .comments__new-comments {
+    width: 528px;
+  }
 }
 
 .comments__user-img {
@@ -568,12 +574,18 @@ body {
           flex-direction: column;
 }
 
+@media screen and (min-width: 768px) {
+  .comments__form {
+    width: 460px;
+  }
+}
+
 .comments__form-user {
   height: 48px;
   margin: 0 0 16px 0;
+  padding: 0 0 0 12px;
   border: solid 2px #E1E1E1;
   border-radius: 4px;
-  text-indent: 12px;
 }
 
 .comments__form-user::-webkit-input-placeholder {
@@ -600,9 +612,9 @@ body {
 .comments__form-comment {
   height: 96px;
   margin: 0 0 16px 0;
+  padding: 0 0 50px 12px;
   border: solid 2px #E1E1E1;
   border-radius: 4px;
-  text-indent: 12px;
 }
 
 .comments__form-comment::-webkit-input-placeholder {
@@ -636,6 +648,65 @@ body {
 
 .comments__form-button:hover {
   background-color: #323232;
+}
+
+@media screen and (min-width: 768px) {
+  .comments__form-button {
+    width: 160px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+}
+
+.comments__old-comments {
+  padding: 0 0 40px 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.comments__list {
+  padding: 24px 0 24px 0;
+  margin: 0;
+  width: 288px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: relative;
+  list-style: none;
+  border-bottom: solid 1px #D5D2D1;
+}
+
+.comments__user-img-past {
+  width: 48px;
+  height: 48px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 24px;
+}
+
+.comments__user-info {
+  width: 210px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .comments__user-info {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
 }
 
 .footer {
