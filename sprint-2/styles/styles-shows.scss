@@ -1,0 +1,15 @@
+@import './mixins/mixins.scss';
+
+.hero {
+    &__img {
+        height: 472px;
+
+        @include tablet-view() {
+            height: 670px;
+        }
+    }
+
+    &__txt {
+        top: 64px;
+    }
+}

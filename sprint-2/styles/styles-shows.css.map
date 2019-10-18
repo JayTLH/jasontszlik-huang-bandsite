@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAGK,AAAD,UAAM,CAAC;EACH,MAAM,EAAE,KAAK;CAKhB;;ACRH,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EDEhC,AAAD,UAAM,CAAC;IAIC,MAAM,EAAE,KAAK;GAEpB;;;AAEA,AAAD,UAAM,CAAC;EACH,GAAG,EAAE,IAAI;CACZ",
+    "sources": [
+        "styles-shows.scss",
+        "mixins/mixins.scss"
+    ],
+    "names": [],
+    "file": "styles-shows.css"
+}

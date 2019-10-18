@@ -527,6 +527,117 @@ body {
   padding: 32px 0 0 0;
 }
 
+.comments__new-comments {
+  padding: 40px 0 32px 0;
+  width: 288px;
+  border-bottom: solid 1px #323232;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-item-align: center;
+      align-self: center;
+  position: relative;
+}
+
+.comments__user-img {
+  width: 48px;
+  height: 48px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 60px;
+}
+
+.comments__form {
+  width: 224px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.comments__form-user {
+  height: 48px;
+  margin: 0 0 16px 0;
+  border: solid 2px #E1E1E1;
+  border-radius: 4px;
+  text-indent: 12px;
+}
+
+.comments__form-user::-webkit-input-placeholder {
+  font-family: "avenir next";
+}
+
+.comments__form-user:-ms-input-placeholder {
+  font-family: "avenir next";
+}
+
+.comments__form-user::-ms-input-placeholder {
+  font-family: "avenir next";
+}
+
+.comments__form-user::placeholder {
+  font-family: "avenir next";
+}
+
+.comments__form-user:focus {
+  border: solid 2px #323232;
+  outline: none;
+}
+
+.comments__form-comment {
+  height: 96px;
+  margin: 0 0 16px 0;
+  border: solid 2px #E1E1E1;
+  border-radius: 4px;
+  text-indent: 12px;
+}
+
+.comments__form-comment::-webkit-input-placeholder {
+  font-family: "avenir next";
+}
+
+.comments__form-comment:-ms-input-placeholder {
+  font-family: "avenir next";
+}
+
+.comments__form-comment::-ms-input-placeholder {
+  font-family: "avenir next";
+}
+
+.comments__form-comment::placeholder {
+  font-family: "avenir next";
+}
+
+.comments__form-comment:focus {
+  border: solid 2px #323232;
+  outline: none;
+}
+
+.comments__form-button {
+  height: 48px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgba(50, 50, 50, 0.9);
+  color: #FFFFFF;
+}
+
+.comments__form-button:hover {
+  background-color: #323232;
+}
+
 .footer {
   background-color: #323232;
   width: 100%;

@@ -1,0 +1,14 @@
+.hero__img {
+  height: 472px;
+}
+
+@media screen and (min-width: 768px) {
+  .hero__img {
+    height: 670px;
+  }
+}
+
+.hero__txt {
+  top: 64px;
+}
+/*# sourceMappingURL=styles-shows.css.map */

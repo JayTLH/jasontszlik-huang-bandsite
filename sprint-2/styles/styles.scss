@@ -51,8 +51,8 @@ body {
     }
 }
 
-@include tablet-view() {
-    .font-header2 {
+.font-header2 {
+    @include tablet-view() {
         font-family: "avenir next bold";
         font-size: 24px;
         line-height: 32px;
@@ -390,6 +390,79 @@ body {
     &__title {
         margin: 0;
         padding: 32px 0 0 0;
+    }
+
+    &__new-comments {
+        padding: 40px 0 32px 0;
+        width: 288px;
+        border-bottom: solid 1px #323232;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        align-self: center;
+        position: relative;
+    }
+
+    &__user-img {
+        width: 48px;
+        height: 48px;
+        object-fit: cover;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 60px;
+    }
+
+    &__form {
+        width: 224px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__form-user {
+        height: 48px;
+        margin: 0 0 16px 0;
+        border: solid 2px #E1E1E1;
+        border-radius: 4px;
+        text-indent: 12px;
+
+        &::placeholder {
+            font-family: "avenir next";
+        }
+
+        &:focus {
+            border: solid 2px #323232;
+            outline: none;
+        }
+    }
+
+    &__form-comment {
+        height: 96px;
+        margin: 0 0 16px 0;
+        border: solid 2px #E1E1E1;
+        border-radius: 4px;
+        text-indent: 12px;
+
+        &::placeholder {
+            font-family: "avenir next";
+        }
+
+        &:focus {
+            border: solid 2px #323232;
+            outline: none;
+        }
+    }
+
+    &__form-button {
+        height: 48px;
+        border: none;
+        border-radius: 4px;
+        background-color: rgba(#323232, 0.9);
+        color: #FFFFFF;
+
+        &:hover {
+            background-color: #323232;
+        }
     }
 }
 
