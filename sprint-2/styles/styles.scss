@@ -491,11 +491,11 @@ body {
         height: 48px;
         border: none;
         border-radius: 4px;
-        background-color: rgba(#323232, 0.9);
+        background-color: #323232;
         color: #FFFFFF;
 
         &:hover {
-            background-color: #323232;
+            background-color: #000000;
         }
 
         @include tablet-view() {

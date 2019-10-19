@@ -1,15 +1,491 @@
 @import './mixins/mixins.scss';
+@import './fonts/fonts.scss';
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "avenir next";
+    color: #323232;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+// making classes for different font styles
+.font-label {
+    font-size: 12px;
+    line-height: 20px;
+    color: #AFAFAF;
+    text-decoration: none;
+}
+
+.font-list-contact{
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.font-paragraph {
+    font-size: 13px;
+    line-height: 18px;
+
+    @include tablet-view() {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+.font-subheader {
+    font-family: "avenir next demi bold";
+    font-size: 14px;
+    line-height: 22px;
+
+    @include tablet-view() {
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+
+.font-header2 {
+    @include tablet-view() {
+        font-family: "avenir next bold";
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+.font-header {
+    font-family: "avenir next bold";
+    font-size: 24px;
+    line-height: 32px;
+
+    @include tablet-view() {
+        font-size: 36px;
+        line-height: 44px;
+    }
+}
+
+.font-hero-header {
+    font-family: "avenir next bold";
+    font-size: 36px;
+    line-height: 44px;
+
+    @include tablet-view() {
+        font-size: 60px;
+        line-height: 88px;
+    }
+}
+
+.header {
+    &__nav-bar {
+        background-color: #323232;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+
+        @include tablet-view() {
+            flex-direction: row;
+            padding: 0 24px;
+        }
+
+        @include laptop-view() {
+            padding: 0 180px;
+        }
+    }
+
+    &__logo-link {
+        height: 19px;
+
+        @include tablet-view() {
+            margin: 0 50px 0 0;
+        }
+
+        @include laptop-view() {
+            margin: 0 56px 0 0;
+        }
+    }
+
+    &__nav-list {
+        width: 100%;
+        list-style: none;
+        padding: 16px 0 0 0;
+        margin: 0;
+        display: flex;
+
+        @include tablet-view() {
+            height: 80px;
+            padding: 0;
+        }
+    }
+
+    &__nav-list-item {
+        width: 50%;
+        text-align: center;
+        padding: 0 0 6px 0;
+
+        @include tablet-view() {
+            width: auto;
+            padding: 37px 6px 27px 6px;
+            margin: 0 70px 0 0;
+            font-size: 14px;
+        }
+
+        @include laptop-view() {
+            margin: 0 56px 0 0;
+        }
+    }
+
+    &__current-site {
+        border-bottom: solid 4px white;
+
+        @include tablet-view() {
+            padding: 37px 6px 23px 6px;
+        }
+    }
+
+    &__nav-link {
+        color: #AFAFAF;
+        text-decoration: none;
+
+        @include laptop-view {
+            &:hover {
+                transition: 0.5s;
+                color: #FFFFFF;
+            }
+        }
+    }
+
+    &__current-link {
+        color: #FFFFFF;
+    }
+}
 
 .hero {
+    display: flex;
+    position: relative;
+    background-color: rgba(#323232,0.5);
+
     &__img {
+        z-index: -1;
+        width: 100%;
+        height: 183px;
+        object-fit: cover;
         height: 472px;
 
         @include tablet-view() {
             height: 670px;
         }
+
+        @include laptop-view() {
+            height: 670px;
+        }
+    }
+
+    &__container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 16px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet-view() {
+            padding: 0 24px;
+        }
+
+        @include laptop-view() {
+            padding: 0 180px;
+        }
+    }
+
+    &__prefix {
+        color: #FFFFFF;
+        margin: 0;
+        padding: 64px 0 0 0;
+        font-size: 14px;
+        line-height: 22px;
+
+        @include tablet-view() {
+            padding: 96px 0 0 0;
+            font-family: "avenir next bold";
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        @include laptop-view() {
+            padding: 160px 0 0 0;
+        }
     }
 
     &__txt {
-        top: 64px;
+        color: #FFFFFF;
+        margin: 0;
+        padding: 10px 0 0 0;
+        width: 288px;
+
+        @include tablet-view() {
+            padding: 20px 0 0 0;
+            width: 596px;
+        }
+    }
+
+    &__soundcloud {
+        box-sizing: content-box;
+        width: 288px;
+        height: 94px;
+        padding: 56px 0 0 0;
+        border-radius: 4px;
+
+        @include tablet-view() {
+            width: 436px;
+            height: 146px;
+            padding: 30px 0 0 0;
+        }
+
+        @include laptop-view() {
+            position: absolute;
+            right: 180px;
+            bottom: 29px;
+        }
+    }
+}
+
+.shows {
+    padding: 0 16px 40px 16px;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet-view() {
+        padding: 0 24px 40px 24px;
+    }
+
+    @include laptop-view() {
+        padding: 0 180px 40px 180px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__title {
+        margin: 0;
+        padding: 32px 0 0 0;
+    }
+
+    &__label {
+        display: none;
+
+        @include tablet-view() {
+            display: inline-block;
+        }
+    }
+
+    &__label-list {
+        list-style: none;
+        display: flex;
+        margin: 0 auto;
+        padding: 32px 0 0 0;
+        width: 720px;
+    }
+
+    &__label-list-item-date {
+        padding: 0 172px 0 0;
+    }
+
+    &__label-list-item-venue {
+        padding: 0 121px 0 0;
+    }
+
+    &__card {
+        padding: 32px 0 24px 0;
+        border-bottom: solid 1px #D5D2D1;
+        width: 288px;
+        align-self: center;
+
+        @include tablet-view() {
+            width: 720px;
+        }
+    }
+
+    &__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        @include tablet-view() {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+    }
+
+    &__list-item-label {
+        padding: 0 0 16px 0;
+
+        @include tablet-view() {
+            display: none;
+        }
+    }
+
+    &__list-item {
+        padding: 0 0 24px 0;
+
+        @include tablet-view() {
+            padding: 0;
+        }
+
+        &--bold {
+            padding: 0 0 24px 0;
+            font-family: "avenir next demi bold";
+
+            @include tablet-view() {
+                padding: 0;
+            }
+        }
+    }
+
+    &__button {
+        width: 288px;
+        height: 48px;
+        border: none;
+        border-radius: 4px;
+        background-color: #323232;
+        color: #FFFFFF;
+
+        @include tablet-view() {
+            width: 160px;
+        }
+    }
+}
+
+.footer {
+    background-color: #323232;
+    width: 100%;
+    color: white;
+    padding: 48px 11px 40px 11px;
+    display: flex;
+    flex-direction: column;
+
+    @include tablet-view() {
+        padding: 48px 24px 48px 24px;
+    }
+
+    @include laptop-view() {
+        padding: 48px 180px 48px 180px;
+    }
+
+    &__nav-bar {
+        @include tablet-view() {
+            display: flex;
+            align-items: baseline;
+        }
+    }
+    
+    &__nav-greeting {
+        margin: 0;
+        font-size: 36px;
+
+        @include tablet-view() {
+            padding: 0 50px 0 0;
+        }
+    }
+
+    &__nav-list {
+        list-style: none;
+        width: 130px;
+        padding: 28px 0 0 5px;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet-view() {
+            padding: 0;
+        }
+    }
+
+    &__nav-logo-img {
+        display: none;
+
+        @include tablet-view() {
+            display: inline-block;
+        }
+
+        @include laptop-view() {
+            width: 120px;
+            height: 24px;
+        }
+    }
+
+    &__nav-link {
+        padding: 0 32px 0 0;
+        @include tablet-view() {
+            margin: 0 0 0 auto;
+        }
+    }
+
+    @include tablet-view() {
+        &__contacts {
+            display: flex;
+            flex-wrap: wrap;
+            width: 720px;
+            justify-content: space-between;
+
+            @include laptop-view() {
+                width: 1080px;
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    &__contact-info {
+        padding: 18px 0 0 0;
+        
+        @include tablet-view() {
+            padding: 46px 0 0 0;
+        }
+
+        @include laptop-view() {
+            padding: 50px 0 0 0;
+            width: 276px;
+        }
+    }
+
+    &__contact-name {
+        margin: 0;
+    }
+
+    &__contact-address {
+        padding: 11px 0 0 0;
+        margin: 0;
+
+        @include laptop-view() {
+            padding: 24px 0 0 0;
+        }
+    }
+
+    &__contact-email {
+        padding: 11px 0 0 0;
+        margin: 0;
+
+        @include laptop-view() {
+            padding: 24px 0 0 0;
+        }
+    }
+
+    &__copyright-info {
+        margin: 0;
+        padding: 40px 0 0 0;
+    }
+
+    &__copyright-break {
+        @include tablet-view() {
+            display: none;
+        }
     }
 }
