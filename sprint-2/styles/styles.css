@@ -275,6 +275,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -288,21 +291,13 @@ body {
     -webkit-box-sizing: content-box;
             box-sizing: content-box;
     padding: 48px 180px 40px 180px;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
   }
 }
 
 .main__article-title {
   margin: 0;
-}
-
-@media screen and (min-width: 1440px) {
-  .main__article-title {
-    -ms-flex-item-align: start;
-        align-self: flex-start;
-  }
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .main__article-img {
@@ -334,6 +329,13 @@ body {
 .main__quote {
   padding: 24px 0 0 0;
   margin: 0;
+  width: 288px;
+}
+
+@media screen and (min-width: 768px) {
+  .main__quote {
+    width: 720px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -356,6 +358,13 @@ body {
 .main__quotee {
   padding: 32px 0 0 0;
   margin: 0;
+  width: 288px;
+}
+
+@media screen and (min-width: 768px) {
+  .main__quotee {
+    width: 720px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -368,6 +377,13 @@ body {
 .main__musician-name {
   padding: 40px 0 0 0;
   margin: 0;
+  width: 288px;
+}
+
+@media screen and (min-width: 768px) {
+  .main__musician-name {
+    width: 720px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -384,6 +400,7 @@ body {
     -ms-grid-columns: auto auto;
         grid-template-columns: auto auto;
     grid-gap: 24px;
+    width: 720px;
   }
 }
 
@@ -397,6 +414,13 @@ body {
 .main__musician-text {
   padding: 24px 0 0 0;
   margin: 0;
+  width: 288px;
+}
+
+@media screen and (min-width: 768px) {
+  .main__musician-text {
+    width: auto;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -520,6 +544,18 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #FFFFFF;
+}
+
+@media screen and (min-width: 768px) {
+  .comments {
+    padding: 0 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .comments {
+    padding: 0 180px;
+  }
 }
 
 .comments__title {
@@ -663,26 +699,43 @@ body {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  max-height: 600px;
+  overflow-y: scroll;
 }
 
 .comments__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.comments__list-item {
   padding: 24px 0 24px 0;
   margin: 0;
   width: 288px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   position: relative;
-  list-style: none;
   border-bottom: solid 1px #D5D2D1;
 }
 
+@media screen and (min-width: 768px) {
+  .comments__list-item {
+    width: 528px;
+  }
+}
+
 .comments__user-img-past {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
@@ -692,7 +745,8 @@ body {
 }
 
 .comments__user-info {
-  width: 210px;
+  padding: 4px 0 0 0;
+  width: 234px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -703,9 +757,32 @@ body {
 
 @media screen and (min-width: 768px) {
   .comments__user-info {
+    width: 460px;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+  }
+}
+
+.comments__user-name-past {
+  padding: 0 10px 0 0;
+  margin: 0;
+}
+
+.comments__date {
+  margin: 0;
+}
+
+.comments__comment-content {
+  padding: 16px 0 0 0;
+  margin: 0;
+  width: 234px;
+  overflow-wrap: break-word;
+}
+
+@media screen and (min-width: 768px) {
+  .comments__comment-content {
+    width: 460px;
   }
 }
 
@@ -843,8 +920,13 @@ body {
   }
 }
 
+.footer__contact-name {
+  margin: 0;
+}
+
 .footer__contact-address {
   padding: 11px 0 0 0;
+  margin: 0;
 }
 
 @media screen and (min-width: 1440px) {
@@ -855,6 +937,7 @@ body {
 
 .footer__contact-email {
   padding: 11px 0 0 0;
+  margin: 0;
 }
 
 @media screen and (min-width: 1440px) {

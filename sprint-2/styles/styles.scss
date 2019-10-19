@@ -211,6 +211,7 @@ body {
         padding: 32px 16px 40px 16px;
         display: flex;
         flex-direction: column;
+        align-items: center; //new
 
         @include tablet-view() {
             padding: 32px 24px 40px 24px;
@@ -219,16 +220,17 @@ body {
         @include laptop-view() {
             box-sizing: content-box;
             padding: 48px 180px 40px 180px;
-            align-items: center;
+            // align-items: center;
         }
     }
 
     &__article-title {
         margin: 0;
+        align-self: flex-start; //new
 
-        @include laptop-view() {
-            align-self: flex-start;
-        }
+        // @include laptop-view() {
+        //     align-self: flex-start;
+        // }
     }
 
     &__article-img {
@@ -253,6 +255,11 @@ body {
     &__quote {
         padding: 24px 0 0 0;
         margin: 0;
+        width: 288px;
+
+        @include tablet-view() {
+            width: 720px;
+        }
 
         @include laptop-view() {
             padding: 48px 0 0 0;
@@ -271,6 +278,11 @@ body {
     &__quotee {
         padding: 32px 0 0 0;
         margin: 0;
+        width: 288px;
+
+        @include tablet-view() {
+            width: 720px;
+        }
 
         @include laptop-view() {
             padding: 40px 0 0 0;
@@ -281,6 +293,11 @@ body {
     &__musician-name {
         padding: 40px 0 0 0;
         margin: 0;
+        width: 288px;
+
+        @include tablet-view() {
+            width: 720px;
+        }
 
         @include laptop-view() {
             padding: 56px 0 0 0;
@@ -293,6 +310,7 @@ body {
             display: grid;
             grid-template-columns: auto auto;
             grid-gap: 24px;
+            width: 720px;
         }
 
         @include laptop-view() {
@@ -304,6 +322,11 @@ body {
     &__musician-text {
         padding: 24px 0 0 0;
         margin: 0;
+        width: 288px;
+
+        @include tablet-view() {
+            width: auto;
+        }
 
         @include laptop-view() {
             padding: 32px 0 0 0;
@@ -386,6 +409,14 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #FFFFFF;
+
+    @include tablet-view() {
+        padding: 0 24px;
+    }
+
+    @include laptop-view() {
+        padding: 0 180px;
+    }
 
     &__title {
         margin: 0;
@@ -481,22 +512,34 @@ body {
     &__old-comments {
         padding: 0 0 40px 0;
         align-self: center;
+        max-height: 600px;
+        overflow-y: scroll;
     }
 
     &__list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__list-item {
         padding: 24px 0 24px 0;
         margin: 0;
         width: 288px;
         display: flex;
-        justify-content: flex-end;
+        flex-direction: column;
+        align-items: flex-end;
         position: relative;
-        list-style: none;
         border-bottom: solid 1px #D5D2D1;
+
+        @include tablet-view() {
+            width: 528px;
+        }
     }
 
     &__user-img-past {
-        width: 48px;
-        height: 48px;
+        width: 40px;
+        height: 40px;
         object-fit: cover;
         border-radius: 50%;
         position: absolute;
@@ -505,12 +548,34 @@ body {
     }
 
     &__user-info {
-        width: 210px;
+        padding: 4px 0 0 0;
+        width: 234px;
         display: flex;
         justify-content: space-between;
 
         @include tablet-view() {
+            width: 460px;
             justify-content: flex-start;
+        }
+    }
+
+    &__user-name-past {
+        padding: 0 10px 0 0;
+        margin: 0;
+    }
+
+    &__date {
+        margin: 0;
+    }
+
+    &__comment-content {
+        padding: 16px 0 0 0;
+        margin: 0;
+        width: 234px;
+        overflow-wrap: break-word;
+
+        @include tablet-view() {
+            width: 460px;
         }
     }
 }
@@ -607,8 +672,13 @@ body {
         }
     }
 
+    &__contact-name {
+        margin: 0;
+    }
+
     &__contact-address {
         padding: 11px 0 0 0;
+        margin: 0;
 
         @include laptop-view() {
             padding: 24px 0 0 0;
@@ -617,6 +687,7 @@ body {
 
     &__contact-email {
         padding: 11px 0 0 0;
+        margin: 0;
 
         @include laptop-view() {
             padding: 24px 0 0 0;

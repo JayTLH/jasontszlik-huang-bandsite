@@ -1,79 +1,34 @@
-// establish variable used to extract the value of the form
-const commentForm = document.querySelector('.comments__form')
-
-// function to return profile pic, feels like a deeper dive to get user info so just default to the provided asset
-function profilePicture() {
-    return '../assets/images/no-profile-pic.jpg'
-}
-
-// function to return user name
-function userName() {
-    commentForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        return (event.target[0].value);
-    })
-}
-
-// function to return the date
-function currentDate() {
-        return '10/18/2019'
-    }
-
-// function to return the comment
-function commentInput() {
-    commentForm.addEventListener('submit', (event) => {
-        return (event.target[1].value);
-    })
-}
-
-// function to add info into an object
-function createObject() {
-    let newCommenter = {
-        image: profilePicuture,
-        name: userName,
-        date: currentDate,
-        comment: commentInput
-    };
-
-    return newCommenter
-}
-
-// function to push object into the array
-
-// function to add new comment
-function addNewComment(image, name, date, comment) {
-    let commentSection = document.querySelector('.comments__old-comments');
-
-    let commentList = document.createElement('ul');
-    commentList.className = 'comments__list';
+// function to add comments into html using DOM
+function displayComment(image, name, date, comment) {
+    const commentList = document.querySelector('.comments__list');
 
     let commentListItem = document.createElement('li');
-    commentListItem.className = 'comments__list-item';
-
+    commentListItem.classList.add('comments__list-item');
+    
     let commentUserImage = document.createElement('img');
-    commentUserImage.className = 'comments__user-img-past';
+    commentUserImage.classList.add('comments__user-img-past');
     commentUserImage.setAttribute('src', image);
     commentUserImage.setAttribute('alt', 'profile picture of past commenter');
-
+    
     let commentHeader = document.createElement('header');
-    commentHeader.className = 'comments__user-info';
-
+    commentHeader.classList.add('comments__user-info');
+    
     let commentName = document.createElement('p');
-    commentName.className = 'comments__user-name-past';
+    commentName.classList.add('comments__user-name-past');
     commentName.textContent = name;
-
+    
     let commentDate = document.createElement('p');
-    commentDate.className = 'comments__date font-label';
+    commentDate.classList.add('comments__date');
+    commentDate.classList.add('font-label');
     commentDate.textContent = date;
 
     let commentArticle = document.createElement('article');
-    commentArticle.className = 'comments__comment-past';
-
+    commentArticle.classList.add('comments__comment-past');
+    
     let commentContent = document.createElement('p');
-    commentContent.className = 'comments__comment-content';
+    commentContent.classList.add('comments__comment-content');
     commentContent.textContent = comment;
-
-    commentSection.appendChild(commentList);
+    
     commentList.appendChild(commentListItem);
     commentListItem.appendChild(commentUserImage);
     commentListItem.appendChild(commentHeader);
@@ -83,7 +38,37 @@ function addNewComment(image, name, date, comment) {
     commentArticle.appendChild(commentContent);
 }
 
-let commenters = [
+// function to add info into an object and unshift it into an array
+function addNewComment() {
+    const commentForm = document.querySelector('.comments__form')
+    let newCommenter = {};
+    commentForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        newCommenter = {
+            image: '../assets/images/Mohan-muruge.jpg',
+            name: event.target['user-name'].value,
+            date: '10/18/2019',
+            comment: event.target['new-comment'].value
+        };
+        commenters.unshift(newCommenter);
+        const commentSection = document.querySelector('.comments__old-comments');
+        let removeCommentList = document.querySelector('.comments__list');
+        removeCommentList.remove();
+        let createCommentList = document.createElement('ul');
+        createCommentList.classList.add('comments__list');
+        commentSection.appendChild(createCommentList);
+        commenters.forEach(function(index) {
+            displayComment(index.image, index.name, index.date, index.comment);
+        })
+    })
+    return newCommenter
+}
+
+// function removeComments() {
+//     let noList = document.querySelector('');
+// }
+
+const commenters = [
     {
         image: '../assets/images/no-profile-pic.jpg',
         name: 'Jason',
@@ -106,8 +91,8 @@ let commenters = [
     },
 ]
 
-// commenters.unshift(createObject);
-
 commenters.forEach(function(index) {
-    addNewComment(index.image, index.name, index.date, index.comment);
+    displayComment(index.image, index.name, index.date, index.comment);
 })
+
+addNewComment();
