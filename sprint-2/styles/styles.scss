@@ -461,13 +461,10 @@ body {
     &__form-user {
         height: 48px;
         margin: 0 0 16px 0;
-        padding: 0 0 0 12px;
+        padding: 0 0 0 16px;
         border: solid 2px #E1E1E1;
         border-radius: 4px;
-
-        &::placeholder {
-            font-family: "avenir next";
-        }
+        font-family: inherit;
 
         &:focus {
             border: solid 2px #323232;
@@ -478,13 +475,11 @@ body {
     &__form-comment {
         height: 96px;
         margin: 0 0 16px 0;
-        padding: 0 0 50px 12px;
+        padding: 16px;
         border: solid 2px #E1E1E1;
         border-radius: 4px;
-
-        &::placeholder {
-            font-family: "avenir next";
-        }
+        font-family: inherit;
+        resize: none;
 
         &:focus {
             border: solid 2px #323232;

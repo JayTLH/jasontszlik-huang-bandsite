@@ -619,25 +619,10 @@ body {
 .comments__form-user {
   height: 48px;
   margin: 0 0 16px 0;
-  padding: 0 0 0 12px;
+  padding: 0 0 0 16px;
   border: solid 2px #E1E1E1;
   border-radius: 4px;
-}
-
-.comments__form-user::-webkit-input-placeholder {
-  font-family: "avenir next";
-}
-
-.comments__form-user:-ms-input-placeholder {
-  font-family: "avenir next";
-}
-
-.comments__form-user::-ms-input-placeholder {
-  font-family: "avenir next";
-}
-
-.comments__form-user::placeholder {
-  font-family: "avenir next";
+  font-family: inherit;
 }
 
 .comments__form-user:focus {
@@ -648,25 +633,11 @@ body {
 .comments__form-comment {
   height: 96px;
   margin: 0 0 16px 0;
-  padding: 0 0 50px 12px;
+  padding: 16px;
   border: solid 2px #E1E1E1;
   border-radius: 4px;
-}
-
-.comments__form-comment::-webkit-input-placeholder {
-  font-family: "avenir next";
-}
-
-.comments__form-comment:-ms-input-placeholder {
-  font-family: "avenir next";
-}
-
-.comments__form-comment::-ms-input-placeholder {
-  font-family: "avenir next";
-}
-
-.comments__form-comment::placeholder {
-  font-family: "avenir next";
+  font-family: inherit;
+  resize: none;
 }
 
 .comments__form-comment:focus {
