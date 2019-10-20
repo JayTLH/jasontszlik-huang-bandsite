@@ -1,6 +1,7 @@
 // function to display comments into html using DOM
 function displayComment(object) {
     const commentList = document.querySelector('.comments__list');
+    let newTime = new Date();
 
     let commentListItem = document.createElement('li');
     commentListItem.classList.add('comments__list-item');
@@ -20,7 +21,41 @@ function displayComment(object) {
     let commentDate = document.createElement('p');
     commentDate.classList.add('comments__date');
     commentDate.classList.add('font-label');
-    commentDate.textContent = object.date;
+    let diffTime = (newTime - object.date) / 1000;
+    Number(diffTime);
+    let convertTime = Math.floor(diffTime);
+    if (convertTime < 60) {
+        resultTime = convertTime + "s ago";
+    }   else if (convertTime < (60 * 60) && convertTime >= 60) {
+        resultTime = Math.floor(convertTime / 60) + "m ago";
+    }   else if (convertTime < (60 * 60 * 24) && convertTime >= (60 * 60)) {
+        resultTime = Math.floor(convertTime / (60 * 60)) + "h ago";
+    }   else if (convertTime < (60 * 60 * 24 * 7) && convertTime >= (60 * 60 * 24)) {
+        resultTime = Math.floor(convertTime / (60 * 60 * 24));
+        if (resultTime === 1) {
+            resultTime = "1 week ago"
+        }   else {
+            resultTime = Math.floor(convertTime / (60 * 60 * 24)) + " weeks ago";
+        }
+    }   else if (convertTime < 2628000 && convertTime >= (60 * 60 * 24 * 7)) {
+        resultTime = Math.floor(convertTime / (60 * 60 * 24 * 7));
+        if (resultTime === 1) {
+            resultTime = "1 month ago"
+        }   else {
+            resultTime = Math.floor(convertTime / (60 * 60 * 24)) + " months ago";
+        }
+    }   else if (convertTime < 31,540,000 && convertTime >= 2628000) {
+        resultTime = Math.floor(convertTime / 2628000);
+        if (resultTime === 1) {
+            resultTime = "1 year ago"
+        }   else {
+            resultTime = Math.floor(convertTime / (60 * 60 * 24)) + " years ago";
+        }
+    }
+    
+
+
+    commentDate.textContent = resultTime;
 
     let commentArticle = document.createElement('article');
     commentArticle.classList.add('comments__comment-past');
@@ -42,14 +77,13 @@ function displayComment(object) {
 function addNewComment() {
     const commentForm = document.querySelector('.comments__form')
     let newCommenter = {};
-    let today = new Date();
-    let date = (today.getMonth()+1) + '/' + today.getDate() + '/' + today.getFullYear();
     commentForm.addEventListener('submit', (event) => {
         event.preventDefault();
+        let now = new Date();
         newCommenter = {
             image: '../assets/images/Mohan-muruge.jpg',
             name: event.target['user-name'].value,
-            date: date,
+            date: now.getTime(),
             comment: event.target['new-comment'].value
         };
         commenters.unshift(newCommenter);
@@ -72,21 +106,21 @@ const commenters = [
     {
         image: '../assets/images/no-profile-pic.jpg',
         name: 'Wolf',
-        date: '10/18/2019',
+        date: '1571531262149',
         comment: "Hey, can't we all just get along? I mean music is suppose to bring people together. I agree it wasn't their best work but I had fun."
     },
 
     {
         image: '../assets/images/no-profile-pic.jpg',
         name: 'Kiel',
-        date: '10/17/2019',
+        date: '1571521149184',
         comment: 'I have no idea what the other guy was talking about, I mean this concert was hot garbage. Its such a shame to see the band I love fall from grace.'
     },
 
     {
         image: '../assets/images/no-profile-pic.jpg',
         name: 'Ignis',
-        date: '10/16/2019',
+        date: '1571511226296',
         comment: 'Yoooo! The concert was FIYA! By far the best event I ever attended, wish I could relieve the moment.'
     },
 ]
