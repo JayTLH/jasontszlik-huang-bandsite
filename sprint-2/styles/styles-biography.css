@@ -670,8 +670,6 @@ body {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  max-height: 600px;
-  overflow-y: scroll;
 }
 
 .comments__list {
@@ -748,7 +746,6 @@ body {
   padding: 16px 0 0 0;
   margin: 0;
   width: 234px;
-  overflow-wrap: break-word;
 }
 
 @media screen and (min-width: 768px) {
@@ -842,13 +839,7 @@ body {
 }
 
 .footer__nav-link {
-  padding: 0 32px 0 0;
-}
-
-@media screen and (min-width: 768px) {
-  .footer__nav-link {
-    margin: 0 0 0 auto;
-  }
+  margin: 0 0 0 auto;
 }
 
 @media screen and (min-width: 768px) {
@@ -927,4 +918,4 @@ body {
     display: none;
   }
 }
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles-biography.css.map */

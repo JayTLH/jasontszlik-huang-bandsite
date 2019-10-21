@@ -52,9 +52,6 @@ function displayComment(object) {
             resultTime = Math.floor(convertTime / (60 * 60 * 24)) + " years ago";
         }
     }
-    
-
-
     commentDate.textContent = resultTime;
 
     let commentArticle = document.createElement('article');

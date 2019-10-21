@@ -507,8 +507,6 @@ body {
     &__old-comments {
         padding: 0 0 40px 0;
         align-self: center;
-        max-height: 600px;
-        overflow-y: scroll;
     }
 
     &__list {
@@ -567,7 +565,6 @@ body {
         padding: 16px 0 0 0;
         margin: 0;
         width: 234px;
-        overflow-wrap: break-word;
 
         @include tablet-view() {
             width: 460px;
@@ -634,10 +631,7 @@ body {
     }
 
     &__nav-link {
-        padding: 0 32px 0 0;
-        @include tablet-view() {
             margin: 0 0 0 auto;
-        }
     }
 
     @include tablet-view() {

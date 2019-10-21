@@ -583,13 +583,7 @@ body {
 }
 
 .footer__nav-link {
-  padding: 0 32px 0 0;
-}
-
-@media screen and (min-width: 768px) {
-  .footer__nav-link {
-    margin: 0 0 0 auto;
-  }
+  margin: 0 0 0 auto;
 }
 
 @media screen and (min-width: 768px) {
