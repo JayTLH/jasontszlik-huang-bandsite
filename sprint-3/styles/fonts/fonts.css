@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "avenir next";
+  src: url(./fonts/avenir-next-pro-lt/avenir-next-lt-pro-regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "avenir next demi bold";
+  src: url(./fonts/avenir-next-pro-lt/avenir-next-lt-pro-demi.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "avenir next bold";
+  src: url(./fonts/avenir-next-pro-lt/avenir-next-lt-pro-bold.otf) format("opentype");
+}
+/*# sourceMappingURL=fonts.css.map */
