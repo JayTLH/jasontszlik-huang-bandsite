@@ -680,6 +680,19 @@ body {
   overflow-y: scroll;
 }
 
+.comments__list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.comments__list::-webkit-scrollbar-track {
+  background: #FAFAFA;
+}
+
+.comments__list::-webkit-scrollbar-thumb {
+  background: #AFAFAF;
+  border-radius: 10px;
+}
+
 .comments__list-item {
   padding: 24px 0 24px 0;
   margin: 0;
