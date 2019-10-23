@@ -1,3 +1,8 @@
+const api = 'd57bad13-0109-4ebf-ab09-1b45a643f963'
+
+const apiKey = `?api_key=${api}`
+
+// function to display comments into html using DOM
 function displayTickets (object) {
     const showsContainer = document.querySelector('.shows__container');
 
@@ -23,7 +28,7 @@ function displayTickets (object) {
 
     let showsListItemVenue = document.createElement('li');
     showsListItemVenue.classList.add('shows__list-item');
-    showsListItemVenue.textContent = object.venue;
+    showsListItemVenue.textContent = object.place;
 
     let showsListItemLocationLabel = document.createElement('li');
     showsListItemLocationLabel.classList.add('shows__list-item-label');
@@ -49,39 +54,10 @@ function displayTickets (object) {
     showsList.appendChild(showsButton);
 }
 
-const showsArr = [
-    {
-        date: 'Mon Dec 17 2018',
-        venue: 'Ronald Lane',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Tue Jul 18 2019',
-        venue: 'Pier 3 East',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Fri Jul 22 2019',
-        venue: 'View Lounge',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Sat Aug 12 2019',
-        venue: 'Hyatt Agency',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Fri Sep 05 2019',
-        venue: 'Moscow Center',
-        location: 'San Francisco, CA'
-    },
-    {
-        date: 'Wed Sep 11 2019',
-        venue: 'Pres Club',
-        location: 'San Francisco, CA'
-    }
-]
-
-showsArr.forEach(function(index) {
-    displayTickets(index);
+axios.get(`https://project-1-api.herokuapp.com/showdates${apiKey}`)
+.then(response => {
+    response.data.forEach(index => {
+        console.log(index);
+        displayTickets(index);
+    })
 })
