@@ -341,7 +341,8 @@ body {
 
         @include tablet-view() {
             padding: 0;
-            width: 161px;
+            width: 151px;
+            margin: 0 10px 0 0;
         }
 
         &--bold {

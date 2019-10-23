@@ -452,7 +452,8 @@ body {
 @media screen and (min-width: 768px) {
   .shows__list-item {
     padding: 0;
-    width: 161px;
+    width: 151px;
+    margin: 0 10px 0 0;
   }
 }
 

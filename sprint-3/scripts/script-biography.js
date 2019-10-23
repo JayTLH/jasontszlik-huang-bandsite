@@ -123,3 +123,20 @@ function displayCommentApi() {
 displayCommentApi();
 
 addNewComment();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
