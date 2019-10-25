@@ -67,7 +67,7 @@ function displayComment(object) {
     let commentContent = document.createElement('p');
     commentContent.classList.add('comments__comment-content');
     commentContent.textContent = object.comment;
-    
+
     commentList.prepend(commentListItem);
     commentListItem.appendChild(commentUserImage);
     commentListItem.appendChild(commentHeader);
@@ -110,33 +110,19 @@ function addNewComment() {
 // function to display comments from api object
 function displayCommentApi() {
     axios.get(`https://project-1-api.herokuapp.com/comments${apiKey}`)
-    .then((response) => {
-        response.data.forEach(index => {
-            displayComment(index);
-        });
+    .then(response => {
+        for (let index = 2; index >= 0; index--) {
+            displayComment(response.data[index]);
+        }
+        for (let indexNew = 3; indexNew < response.data.length; indexNew++) {
+            displayComment(response.data[indexNew]);
+        }
     })
     .catch(() => {
-        console.log("Failed to display comments");
+        console.error("Failed to display comments");
     })
 }
 
 displayCommentApi();
 
 addNewComment();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
