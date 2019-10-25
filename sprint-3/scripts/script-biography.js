@@ -49,12 +49,19 @@ function displayComment(object) {
         }   else {
             resultTime = Math.floor(convertTime / (60 * 60 * 24 * 7)) + " weeks ago";
         }
-    }   else if (convertTime >= 2628000) {
+    }   else if (convertTime < 31540000 && convertTime >= 2628000) {
         resultTime = Math.floor(convertTime / 2628000);
         if (resultTime < 2) {
             resultTime = "1 month ago"
         }   else {
             resultTime = Math.floor(convertTime / (2628000)) + " months ago";
+        }
+    }   else if (convertTime >= 31540000) {
+        resultTime = Math.floor(convertTime / 31540000);
+        if (resultTime < 2) {
+            resultTime = "1 year ago"
+        }   else {
+            resultTime = Math.floor(convertTime / (31540000)) + " years ago";
         }
     }   else {
         resultTime = "posted a second ago"
