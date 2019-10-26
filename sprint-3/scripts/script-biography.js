@@ -1,5 +1,4 @@
 const api = 'd57bad13-0109-4ebf-ab09-1b45a643f963'
-
 const apiKey = `?api_key=${api}`
 
 // function to display comments into html using DOM
@@ -26,6 +25,7 @@ function displayComment(object) {
     commentDate.classList.add('comments__date');
     commentDate.classList.add('font-label');
     
+    // dynamic timestamp
     let diffTime = (newTime - object.timestamp) / 1000;
     Number(diffTime);
     let convertTime = Math.floor(diffTime);
@@ -64,9 +64,15 @@ function displayComment(object) {
             resultTime = Math.floor(convertTime / (31540000)) + " years ago";
         }
     }   else {
-        resultTime = "posted a second ago"
+        resultTime = "recently posted"
     }
     commentDate.textContent = resultTime;
+
+    // deeper dive, delete button
+    let commentDelete = document.createElement('button');
+    commentDelete.classList.add('comments__delete-button');
+    commentDelete.setAttribute('value', object.id);
+    commentDelete.innerText = "Remove";
 
     let commentArticle = document.createElement('article');
     commentArticle.classList.add('comments__comment-past');
@@ -81,7 +87,22 @@ function displayComment(object) {
     commentListItem.appendChild(commentArticle);
     commentHeader.appendChild(commentName);
     commentHeader.appendChild(commentDate);
+    commentHeader.appendChild(commentDelete);
     commentArticle.appendChild(commentContent);
+
+    // function to delete comments
+    function deleteComment() {
+        commentDelete.addEventListener('click', event => {
+            event.preventDefault();
+            let deleteId = event.target.value;
+            axios.delete(`https://project-1-api.herokuapp.com/comments/${deleteId}${apiKey}`)
+            .catch(() => {
+                console.error('Failed to delete comment');
+            })
+            commentDelete.parentNode.parentNode.remove();
+        })
+    }
+    deleteComment();
 }
 
 // function to add a new comment as an object and unshift it into an array
@@ -118,12 +139,10 @@ function addNewComment() {
 function displayCommentApi() {
     axios.get(`https://project-1-api.herokuapp.com/comments${apiKey}`)
     .then(response => {
-        for (let index = 2; index >= 0; index--) {
-            displayComment(response.data[index]);
-        }
-        for (let indexNew = 3; indexNew < response.data.length; indexNew++) {
-            displayComment(response.data[indexNew]);
-        }
+        response.data.sort((a, b) => {a.timestamp < b.timestamp ? 1 : -1})
+        response.data.forEach(index => {
+            displayComment(index);
+        })
     })
     .catch(() => {
         console.error("Failed to display comments");
@@ -131,5 +150,4 @@ function displayCommentApi() {
 }
 
 displayCommentApi();
-
 addNewComment();

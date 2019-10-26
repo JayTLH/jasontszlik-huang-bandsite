@@ -685,7 +685,7 @@ body {
 }
 
 .comments__list::-webkit-scrollbar-track {
-  background: #FAFAFA;
+  display: none;
 }
 
 .comments__list::-webkit-scrollbar-thumb {
@@ -737,6 +737,9 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
 }
 
 @media screen and (min-width: 768px) {
@@ -755,6 +758,16 @@ body {
 
 .comments__date {
   margin: 0;
+}
+
+.comments__delete-button {
+  font-family: inherit;
+  margin: 0 10px 0 auto;
+  border-radius: 4px;
+  border: none;
+  color: #FAFAFA;
+  background: #AFAFAF;
+  height: 20px;
 }
 
 .comments__comment-content {

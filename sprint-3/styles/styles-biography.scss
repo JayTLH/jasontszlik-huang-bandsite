@@ -521,7 +521,7 @@ body {
         }
 
         &::-webkit-scrollbar-track {
-            background: #FAFAFA; 
+            display: none;
         }
 
         &::-webkit-scrollbar-thumb {
@@ -560,6 +560,7 @@ body {
         width: 234px;
         display: flex;
         justify-content: space-between;
+        align-items: baseline;
 
         @include tablet-view() {
             width: 460px;
@@ -574,6 +575,16 @@ body {
 
     &__date {
         margin: 0;
+    }
+
+    &__delete-button {
+        font-family: inherit;
+        margin: 0 10px 0 auto;
+        border-radius: 4px;
+        border: none;
+        color: #FAFAFA;
+        background: #AFAFAF;
+        height: 20px;
     }
 
     &__comment-content {
