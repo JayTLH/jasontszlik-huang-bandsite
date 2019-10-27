@@ -91,6 +91,7 @@ function displayComment(object) {
 
     commentLikeCounter = document.createElement('p');
     commentLikeCounter.classList.add('comments__like-counter');
+    commentLikeCounter.classList.add('font-label');
     if (object.likes != 0) {
         commentLikeCounter.textContent = object.likes;
     }
