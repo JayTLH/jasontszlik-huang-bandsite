@@ -121,10 +121,8 @@ function displayComment(object) {
             let likeId = event.target.alt;
             axios.put(`https://project-1-api.herokuapp.com/comments/${likeId}/like${apiKey}`, "")
             .then(response => {
-                let newLike = commentLike.nextSibling.innerText;
-                let numLike = Number(newLike);
-                console.log(typeof(numLike));
-                commentLike.nextSibling.innerText = numLike + 1;
+                let newLike = Number(commentLike.nextSibling.innerText);
+                commentLike.nextSibling.innerText = newLike + 1;
             })
             .catch(error => {
                 console.error(error);
