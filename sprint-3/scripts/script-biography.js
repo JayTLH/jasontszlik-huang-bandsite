@@ -67,13 +67,7 @@ function displayComment(object) {
         resultTime = "recently posted"
     }
     commentDate.textContent = resultTime;
-
-    // deeper dive, delete button
-    let commentDelete = document.createElement('button');
-    commentDelete.classList.add('comments__delete-button');
-    commentDelete.setAttribute('value', object.id);
-    commentDelete.innerText = "Remove";
-
+    
     let commentArticle = document.createElement('article');
     commentArticle.classList.add('comments__comment-past');
     
@@ -81,14 +75,63 @@ function displayComment(object) {
     commentContent.classList.add('comments__comment-content');
     commentContent.textContent = object.comment;
 
+    // deeper dive container
+    let deepDive = document.createElement('section');
+    deepDive.classList.add("comments__deep-dive");
+
+    // deeper dive, like container
+    let commentLikesContainer = document.createElement('section');
+    commentLikesContainer.classList.add("comments__likes-container");
+
+    // deeper dive, likes
+    let commentLike = document.createElement('img');
+    commentLike.classList.add('comments__likes');
+    commentLike.setAttribute('src', "../assets/icons/icon-like-gregor-cresnar.svg");
+    commentLike.setAttribute('alt', object.id);
+
+    commentLikeCounter = document.createElement('p');
+    commentLikeCounter.classList.add('comments__like-counter');
+    if (object.likes != 0) {
+        commentLikeCounter.textContent = object.likes;
+    }
+
+    // deeper dive, delete button
+    let commentDelete = document.createElement('button');
+    commentDelete.classList.add('comments__delete-button');
+    commentDelete.setAttribute('value', object.id);
+    commentDelete.innerText = "Remove";
+    
     commentList.prepend(commentListItem);
     commentListItem.appendChild(commentUserImage);
     commentListItem.appendChild(commentHeader);
     commentListItem.appendChild(commentArticle);
+    commentListItem.appendChild(deepDive);
     commentHeader.appendChild(commentName);
     commentHeader.appendChild(commentDate);
-    commentHeader.appendChild(commentDelete);
     commentArticle.appendChild(commentContent);
+    deepDive.appendChild(commentLikesContainer);
+    deepDive.appendChild(commentDelete);
+    commentLikesContainer.appendChild(commentLike);
+    commentLikesContainer.appendChild(commentLikeCounter);
+
+    // function to add likes
+    function addLikes() {
+        commentLike.addEventListener('click', event => {
+            event.preventDefault();
+            let likeId = event.target.alt;
+            axios.put(`https://project-1-api.herokuapp.com/comments/${likeId}/like${apiKey}`, "")
+            .then(response => {
+                let newLike = commentLike.nextSibling.innerText;
+                let numLike = Number(newLike);
+                console.log(typeof(numLike));
+                commentLike.nextSibling.innerText = numLike + 1;
+            })
+            .catch(error => {
+                console.error(error);
+            })
+            
+        })
+    }
 
     // function to delete comments
     function deleteComment() {
@@ -102,6 +145,8 @@ function displayComment(object) {
             commentDelete.parentNode.parentNode.remove();
         })
     }
+
+    addLikes();
     deleteComment();
 }
 
@@ -129,8 +174,8 @@ function addNewComment() {
             event.target['user-name'].value = '';
             event.target['new-comment'].value = '';
         })
-        .catch(() => {
-            console.error("Failed to post")
+        .catch((error) => {
+            console.error(error);
         })
     })
 }
@@ -144,8 +189,8 @@ function displayCommentApi() {
             displayComment(index);
         })
     })
-    .catch(() => {
-        console.error("Failed to display comments");
+    .catch((error) => {
+        console.error(error);
     })
 }
 

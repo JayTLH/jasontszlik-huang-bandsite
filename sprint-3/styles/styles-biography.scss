@@ -561,6 +561,7 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: baseline;
+        flex-wrap: wrap;
 
         @include tablet-view() {
             width: 460px;
@@ -575,6 +576,41 @@ body {
 
     &__date {
         margin: 0;
+        padding: 0 24px 0 0;
+    }
+
+    &__comment-content {
+        padding: 16px 0 0 0;
+        margin: 0;
+        width: 234px;
+        
+        @include tablet-view() {
+            width: 460px;
+        }
+    }
+
+    &__deep-dive {
+        display: flex;
+        width: 234px;
+        padding: 10px 0 0 0;
+
+        @include tablet-view() {
+            width: 460px;
+        }
+    }
+
+    &__likes-container {
+        display: flex;
+    }
+
+    &__likes {
+        width: 16px;
+        height: 16px;
+        margin: 0 8px 0 0;
+    }
+
+    &__like-counter {
+        margin: 0;
     }
 
     &__delete-button {
@@ -585,16 +621,6 @@ body {
         color: #FAFAFA;
         background: #AFAFAF;
         height: 20px;
-    }
-
-    &__comment-content {
-        padding: 16px 0 0 0;
-        margin: 0;
-        width: 234px;
-
-        @include tablet-view() {
-            width: 460px;
-        }
     }
 }
 
